@@ -1,0 +1,10 @@
+{
+  "slug": "triagem-carol",
+  "name": "CAROL (Classificação de Agravos Reais de forma Objetiva e Ligeira)",
+  "version": "2.0.0",
+  "description": "Classificação de risco para unidades de Pronto Atendimento, seguindo a classificação de Manchester - Manchester Triage System (MTS) - conforme critérios do protocolo utilizado no Hospital de brasília",
+  "io": {
+    "input": ["triage"],
+    "output": null
+  }
+}

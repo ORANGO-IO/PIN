@@ -1,0 +1,10 @@
+{
+  "slug": "hospital",
+  "name": "Hospital HPP (Hospital de Pequeno Porte)",
+  "version": "0.1.0",
+  "description": "Aplicação simples para gerenciar dados de registros em saúde em um hospital de pequeno porte 5 - 30 leitos de internamento",
+  "io": {
+    "input": ["changeReceptionForm", "changeTriageForm", "changeRecordForm"],
+    "output": ["core.medicalRecords", "core.patients", "core.professionals"]
+  }
+}
