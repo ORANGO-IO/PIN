@@ -1,6 +1,8 @@
 import { ApolloServer, gql } from "apollo-server";
-import { ApolloServerPluginLandingPageGraphQLPlayground,
-  ApolloServerPluginLandingPageDisabled } from 'apollo-server-core'
+import {
+  ApolloServerPluginLandingPageGraphQLPlayground,
+  ApolloServerPluginLandingPageDisabled,
+} from "apollo-server-core";
 
 const typeDefs = gql`
   type Query {
@@ -19,7 +21,7 @@ const typeDefs = gql`
     title: String!
     content: String
     published: Boolean!
-    author: User!
+    author: Person!
     authorId: Int!
   }
 `;
@@ -45,20 +47,14 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  csrfPrevention: true,
-  cache: "bounded",
   plugins: [
-    process.env.NODE_ENV === 'production'
+    process.env.NODE_ENV === "production"
       ? ApolloServerPluginLandingPageDisabled()
       : ApolloServerPluginLandingPageGraphQLPlayground(),
   ],
 });
 
+
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
-
-if (module.hot) {
-  module.hot.accept();
-  module.hot.dispose(() => server.stop());
-}

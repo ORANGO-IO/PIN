@@ -22,3 +22,13 @@ Como é um sistema `js` voltado para a comunidade poder desenvolver de forma fá
 - `react` como framework para frontend
 - `styled-componenets` como estilização
 - `apollo-server` tem uma ampla comunidade e suporte GraphQL
+
+## Rodando a aplicação
+
+Para inicializar a aplicação necessitará de dois terminais rodando, um para o frontend e um para o backend. Antes é necessário instalar as deepndências de desenvolvimento:
+
+```sh
+yarn
+yarn start
+yarn start:server
+```

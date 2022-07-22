@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --port 3000",
-    "start:server": "node dist/server",
+    "start:server": "tsnd --respawn core/api/server.ts",
     "build": "NODE_ENV=production webpack",
     "build:server": "webpack --config webpack.$NODE_ENV.js"
   },
@@ -36,6 +36,7 @@
     "@prisma/client": "4.1.0",
     "apollo-server": "^3.10.0",
     "graphql": "^16.5.0",
+    "graphql-modules": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

@@ -1,22 +1,24 @@
-
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   module: {
     rules: [
       {
-        exclude: [path.resolve(__dirname, 'node_modules')],
+        exclude: [path.resolve(__dirname, "node_modules")],
         test: /\.ts$/,
-        use: 'ts-loader'
-      }
-    ]
+        use: "ts-loader",
+      },
+    ],
   },
   output: {
-    filename: 'server.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "server.js",
+    path: path.resolve(__dirname, "dist/api"),
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: [".ts", ".js"],
   },
-  target: 'node'
+  target: "node",
+  experiments: {
+    topLevelAwait: true,
+  },
 };

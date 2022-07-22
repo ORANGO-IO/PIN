@@ -1,3 +1,5 @@
+const path = require("path");
+
 const prod = process.env.NODE_ENV === 'production';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -7,7 +9,7 @@ module.exports = {
   mode: prod ? 'production' : 'development',
   entry: './core/ui/src/index.tsx',
   output: {
-    path: __dirname + '/dist/',
+    path: path.resolve(__dirname, "dist/ui"),
   },
   module: {
     rules: [
