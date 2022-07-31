@@ -8,7 +8,8 @@
     "start": "webpack serve --port 3000",
     "start:server": "tsnd --respawn core/api/server.ts",
     "build": "NODE_ENV=production webpack",
-    "build:server": "webpack --config webpack.$NODE_ENV.js"
+    "build:server": "webpack --config webpack.$NODE_ENV.js",
+    "pin:install": "node core/service/plugin-register.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
