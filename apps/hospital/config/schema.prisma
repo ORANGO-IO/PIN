@@ -1,0 +1,20 @@
+model Complain {
+    id          Int      @id @default(autoincrement())
+    name        String
+    description String
+    Triage      Triage[]
+}
+
+model Triage {
+    id                     Int      @id @default(autoincrement())
+    complain               Complain @relation(fields: [complainId], references: [id])
+    spO2                   Int
+    cardiacFreq            Int      @map("cardiac_freq")
+    respiratoryFreq        Int      @map("respiratory_freq")
+    axilarTemperature      Float    @map("axilar_temperature")
+    glucose                Int
+    pain                   Int
+    systolicBloodPressure  Int      @map("systolic_b_pressure")
+    diastolicBloodPressure Int      @map("diastolic_b_pressure")
+    complainId             Int      @map("complain_id")
+}

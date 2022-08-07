@@ -1,0 +1,8 @@
+{
+  "mixers": [
+    {
+      "input": ["core/config/schema.prisma", "apps/*/config/schema.prisma"],
+      "output": "prisma/schema.prisma"
+    }
+  ]
+}

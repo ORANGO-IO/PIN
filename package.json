@@ -6,10 +6,11 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --port 3000",
+    "prismix": "npx prismix && prisma format",
     "start:server": "tsnd --respawn core/api/server.ts",
     "build": "NODE_ENV=production webpack",
     "build:server": "webpack --config webpack.$NODE_ENV.js",
-    "pin:install": "node core/service/plugin-register.js"
+    "pin:install": "yarn prismix && node core/service/plugin-register.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
@@ -23,6 +24,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "prisma": "^4.1.0",
+    "prismix": "^1.0.21",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
     "ts-node-dev": "^2.0.0",
