@@ -5,6 +5,7 @@
   "author": "Filipe Lopes",
   "license": "MIT",
   "scripts": {
+    "commit": "cz",
     "start": "webpack serve --port 3000",
     "prismix": "npx prismix && prisma format",
     "start:server": "tsnd --respawn core/api/server.ts",
