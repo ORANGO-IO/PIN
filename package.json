@@ -10,7 +10,8 @@
     "start:server": "tsnd --respawn core/api/server.ts",
     "build": "NODE_ENV=production webpack",
     "build:server": "webpack --config webpack.$NODE_ENV.js",
-    "pin:install": "yarn prismix && node core/service/plugin-register.js"
+    "pin:install": "yarn prismix && node core/service/plugin-register.js",
+    "lint": "eslint './src/**/*.ts' --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
@@ -19,9 +20,13 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/webpack-env": "^1.17.0",
+    "@typescript-eslint/parser": "^5.30.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
+    "cz-conventional-changelog": "3.3.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
     "mini-css-extract-plugin": "^2.6.1",
     "prisma": "^4.1.0",
     "prismix": "^1.0.21",
@@ -42,5 +47,10 @@
     "graphql-modules": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
