@@ -1,1 +1,1 @@
-import "./change-record-form";
+import './change-record-form'

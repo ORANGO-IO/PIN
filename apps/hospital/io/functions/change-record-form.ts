@@ -1,4 +1,4 @@
-import { PluginConnectionProps } from "../types";
+import { PluginConnectionProps } from '../types'
 
 interface Input {
   type: string;
@@ -15,8 +15,8 @@ interface ChangeRecordFormProps extends PluginConnectionProps {
  */
 const changeRecordForm = (props: ChangeRecordFormProps): void => {
   props.args.inputs.forEach(input => {
-    console.log(`Adicionando ao formulário o campo ${input.label} do tipo ${input.type}`);
+    console.log(`Adicionando ao formulário o campo ${input.label} do tipo ${input.type}`)
   })
-};
+}
 
-export default changeRecordForm;
+export default changeRecordForm
