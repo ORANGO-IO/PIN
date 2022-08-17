@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import Container from './styles'
-
-interface ButtonProps{
+/* global HTMLButtonElement */
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     typeColor:'success' |'disabled'|'normal'|'send';
     content:React.ReactNode
 }
 
-const Button:React.FC<ButtonProps> = ({ content, typeColor }) => <Container typeColor={typeColor}>{content}</Container>
+const Button:React.FC<ButtonProps> = ({ content, typeColor, ...rest }) => <Container typeColor={typeColor} {...rest}>{content}</Container>
 
 export default Button
