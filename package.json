@@ -12,7 +12,7 @@
     "build": "NODE_ENV=production webpack",
     "build:server": "webpack --config webpack.$NODE_ENV.js",
     "pin:install": "yarn prismix && node core/service/plugin-register.js",
-    "lint": "eslint './apps/**/*.ts' --fix",
+    "lint": "eslint \"./apps/**/*.ts\" --fix",
     "prepare": "husky install"
   },
   "devDependencies": {

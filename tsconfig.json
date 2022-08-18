@@ -19,7 +19,8 @@
     "sourceMap": true,
     "removeComments": true,
     "target": "esnext",
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "."
   },
   "exclude": ["node_modules", "dist"],
 }
