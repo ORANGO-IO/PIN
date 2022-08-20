@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export default styled.div<{labelPosition:'Top'|'Bottom'|'Left'|'Right'}>`
+export default styled.div<{labelPosition?:'Top'|'Bottom'|'Left'|'Right'}>`
 display:flex;
 
     label{
@@ -17,6 +17,7 @@ display:flex;
 
     input{
         background: #FCFCFC;
+        height:27px;
         border: 1px solid #929292;
         box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px rgba(0, 0, 0, 0.06);
         border-radius: 5px;
