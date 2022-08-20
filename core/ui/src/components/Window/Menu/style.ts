@@ -9,7 +9,15 @@ export default styled.div<{open:boolean}>`
     backdrop-filter: blur(60px);
     position:absolute;
     bottom:0;
+    z-index:5;
     left:0;
+    box-sizing:border-box;
+    transition:height 0.5s linear;
+    
+    .container{
+        position:absolute;
+        top:0;
+    }
 
     .buttonMenu{
         position:absolute;
