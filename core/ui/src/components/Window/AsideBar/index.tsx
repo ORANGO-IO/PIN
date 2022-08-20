@@ -1,7 +1,7 @@
 import useDimension from '../../../services/hooks/useDimension'
 import React, { useEffect, useRef, useState } from 'react'
 import OptionBar from './components/OptionBar'
-import Container, { ButtonStyle } from './styles'
+import Container, { ButtonStyle, ButtonContainer } from './styles'
 import Button from '../../Button'
 /* global HTMLButtonElement */
 /* global HTMLElement */
@@ -35,11 +35,14 @@ const AsideBar = () => {
             <OptionBar status='Normal' text='teste3' element={<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>}/>
         </ul>
     </Container>
-    {!open && sizeType === 'small' && <Button onClick={() => setOpen(!open)} typeColor='secondary' content={<ButtonStyle>
+    {!open && sizeType === 'small' && <>
+    <ButtonContainer></ButtonContainer>
+    <Button style={{ position: 'absolute', top: '8px', left: '8px' }} onClick={() => setOpen(!open)} typeColor='secondary' content={<ButtonStyle>
         <span className='span1'/>
         <span className='span2' />
         <span className='span3'/>
-    </ButtonStyle>} />}
+    </ButtonStyle>} />
+    </>}
     </>
   )
 }

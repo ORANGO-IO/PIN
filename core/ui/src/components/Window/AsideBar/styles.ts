@@ -21,7 +21,7 @@ export default styled.aside<{sizeType:'normal'|'small';open:boolean;width:number
     .modal{
         position:absolute;
         width:100%;
-        height:100%;
+        height:0;
         padding:0;
         z-index:-1;
         border:none;
@@ -43,6 +43,8 @@ export default styled.aside<{sizeType:'normal'|'small';open:boolean;width:number
                     .modal{
                         opacity:${open ? 1 : 0};
                         pointer-events:all;
+                        height:${open ? '100%' : 0}
+
                     }
                 `
         }
@@ -64,4 +66,9 @@ span{
 }
 
 
+`
+
+export const ButtonContainer = styled.span`
+    width:34px;
+    height:0;
 `
