@@ -7,6 +7,9 @@ export default styled.li<{status:'Active'|'Disabled'|'Normal'}>`
     align-items:center;
     padding:0 14px;
     column-gap:13px;
+    box-sizing:border-box;
+    cursor:pointer;
+
     >div{
         display:flex;
     }

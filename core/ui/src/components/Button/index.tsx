@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes } from 'react'
 import Container from './styles'
 /* global HTMLButtonElement */
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
-    typeColor:'success' |'disabled'|'normal'|'send';
+    typeColor:'success' |'disabled'|'normal'|'send' | 'secondary';
     content:React.ReactNode
 }
 
