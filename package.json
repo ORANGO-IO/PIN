@@ -8,11 +8,11 @@
     "commit": "cz",
     "start": "webpack serve --port 3000",
     "prismix": "npx prismix && prisma format",
-    "start:server": "tsnd --respawn core/api/server.ts",
+    "start:server": "tsnd -r tsconfig-paths/register --respawn core/api/server.ts",
     "build": "NODE_ENV=production webpack",
     "build:server": "webpack --config webpack.$NODE_ENV.js",
-    "pin:install": "yarn prismix && node core/service/plugin-register.js",
-    "lint": "eslint \"./apps/**/*.ts\" --fix",
+    "pin:install": "node core/service/plugin-register.js",
+    "lint": "eslint \"./apps/**/*.+(ts|tsx)\" --fix && eslint \"./core/**/*.+(ts|tsx)\" --fix",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -42,6 +42,8 @@
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
     "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.0",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.7.4",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
