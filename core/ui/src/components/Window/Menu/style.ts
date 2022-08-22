@@ -1,6 +1,19 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+
+const height = keyframes`
+    from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;
+  }
+`
 
 export default styled.div<{open:boolean}>`
+    display:flex;
+    justify-content:center;
+    padding:0 10vw;
     width:100%;
     height:66px;
     transition: height 0.2s linear;
@@ -25,8 +38,20 @@ export default styled.div<{open:boolean}>`
         left:18px;
 
     }
+    .explication{
+        opacity:0;
+        user-select:none;
+        pointer-events:none;
+    }
     
     ${({ open }) => open && css`
         height:100vh;
+        .explication{
+            animation-name:${height};
+            animation-delay:0.5s;
+            animation-duration: 0s;
+            animation-fill-mode: forwards;
+        }
+
     `}
 `
