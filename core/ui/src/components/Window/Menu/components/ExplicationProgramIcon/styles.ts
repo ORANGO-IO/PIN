@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default styled.div`
-
+    width:100%;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     height: 230px;
