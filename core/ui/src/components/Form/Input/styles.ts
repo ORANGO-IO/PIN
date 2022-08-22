@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export default styled.div<{labelPosition?:'Top'|'Bottom'|'Left'|'Right'}>`
-display:flex;
+    display:flex;
 
     label{
         font-family: 'Ubuntu';
