@@ -12,11 +12,12 @@ const height = keyframes`
 
 export default styled.div<{open:boolean}>`
     display:flex;
-    justify-content:center;
     padding:0 10vw;
+    padding-top:32px;
     width:100%;
     height:66px;
     transition: height 0.2s linear;
+    align-items:baseline;
 
     background: rgba(77, 76, 72, 0.8);
     backdrop-filter: blur(60px);
@@ -38,20 +39,23 @@ export default styled.div<{open:boolean}>`
         left:18px;
 
     }
+   
+    ${({ open }) => !open && css`
     .explication{
         opacity:0;
         user-select:none;
         pointer-events:none;
     }
-    
+
+    `} 
     ${({ open }) => open && css`
         height:100vh;
-        .explication{
+        /* .explication{
             animation-name:${height};
             animation-delay:0.5s;
             animation-duration: 0s;
             animation-fill-mode: forwards;
-        }
+        } */
 
     `}
 `
