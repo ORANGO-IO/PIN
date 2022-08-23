@@ -5,13 +5,13 @@ import Container from './styles'
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
     labelPosition?:'Top'|'Bottom'|'Left'|'Right'
     label?:string,
-    labelStyle?:LabelHTMLAttributes<HTMLLabelElement>
+    labelOptions?:LabelHTMLAttributes<HTMLLabelElement>
 }
 
-const Input:React.FC<InputProps> = ({ labelPosition, label, labelStyle, ...rest }) => (
+const Input:React.FC<InputProps> = ({ labelPosition, label, labelOptions, ...rest }) => (
     <Container labelPosition={labelPosition}>
         {label &&
-        <label style={labelStyle}>{label}</label>
+        <label {...labelOptions}>{label}</label>
         }
         <input {...rest}/>
     </Container>

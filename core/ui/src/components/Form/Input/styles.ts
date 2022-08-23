@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 export default styled.div<{labelPosition?:'Top'|'Bottom'|'Left'|'Right'}>`
     display:flex;
-
+    width:100%;
     label{
         font-family: 'Ubuntu';
     font-style: normal;
@@ -16,6 +16,7 @@ export default styled.div<{labelPosition?:'Top'|'Bottom'|'Left'|'Right'}>`
     }
 
     input{
+        width:100%;
         background: #FCFCFC;
         height:27px;
         border: 1px solid #929292;
