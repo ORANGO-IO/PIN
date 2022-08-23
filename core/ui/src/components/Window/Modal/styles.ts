@@ -7,7 +7,7 @@ export default styled.div<{open:boolean}>`
     position:fixed;
     top:0;
     left:0;
-    display:${open => open ? 'flex' : 'none'};
+    display:${({ open }) => open ? 'flex' : 'none'};
     align-items:center;
     justify-content:center;
 
