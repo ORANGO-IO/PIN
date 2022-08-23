@@ -7,7 +7,7 @@ interface SelectProps<O, M extends boolean = false, T extends GroupBase<O> = Gro
   extends Props<O, M, T> {
     label?:string;
     labelPosition?:'Top'|'Bottom'|'Left'|'Right',
-    labelStyle?:LabelHTMLAttributes<HTMLLabelElement>
+    labelOptions?:LabelHTMLAttributes<HTMLLabelElement>
 }
 
 export const MultiSelect = <
@@ -17,12 +17,13 @@ Group extends GroupBase<Option> = GroupBase<Option>
 > ({
     label,
     labelPosition,
+    labelOptions,
     ...rest
   }: SelectProps<Option, IsMulti, Group>) => {
   return (
       <Container labelPosition={labelPosition}>
         {label &&
-        <label>{label}</label>
+        <label {...labelOptions}>{label}</label>
         }
         <ReactSelect
       options={[{ value: 'teste', label: 'teste' }]}

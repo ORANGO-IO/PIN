@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../Button'
+import HeaderButton from './components/HeaderButton'
 import Container from './styled'
 /* global HTMLButtonElement */
 
@@ -12,7 +12,7 @@ interface HeaderProps{
 
 const Header:React.FC<HeaderProps> = ({ title, buttonDisabled, buttonClick, leftComponent }) => (
     <Container>
-        <div><Button disabled={buttonDisabled} onClick={buttonClick} content="oi" typeColor='normal'/></div>
+        <div><HeaderButton disabled={buttonDisabled} onClick={buttonClick}>oi</HeaderButton></div>
         <p>{title}</p>
         <div>{leftComponent}</div>
     </Container>

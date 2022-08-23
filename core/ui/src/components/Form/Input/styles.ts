@@ -38,6 +38,10 @@ ${({ labelPosition }) => {
             return css`
                 flex-direction:row-reverse;
             `
+        case 'Left':
+            return css`
+                align-items:center;
+            `
         default:
     }
 }}

@@ -37,11 +37,11 @@ const AsideBar = () => {
     </Container>
     {!open && sizeType === 'small' && <>
     <ButtonContainer></ButtonContainer>
-    <Button style={{ position: 'absolute', top: '8px', left: '8px' }} onClick={() => setOpen(!open)} typeColor='secondary' content={<ButtonStyle>
+    <Button style={{ position: 'absolute', top: '8px', left: '8px' }} onClick={() => setOpen(!open)} ><ButtonStyle>
         <span className='span1'/>
         <span className='span2' />
         <span className='span3'/>
-    </ButtonStyle>} />
+    </ButtonStyle></Button>
     </>}
     </>
   )
