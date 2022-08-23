@@ -69,6 +69,6 @@ span{
 `
 
 export const ButtonContainer = styled.span`
-    width:34px;
+    min-width:50px;
     height:0;
 `

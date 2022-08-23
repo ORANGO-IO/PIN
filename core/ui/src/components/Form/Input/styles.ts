@@ -22,6 +22,16 @@ export default styled.div<{labelPosition?:'Top'|'Bottom'|'Left'|'Right'}>`
         border: 1px solid #929292;
         box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px rgba(0, 0, 0, 0.06);
         border-radius: 5px;
+
+        :focus{
+            border: 1px solid #DB815D;
+            outline:none;
+            padding-left: 6px;
+        }
+
+        ::placeholder{        
+            color: #D7D7D7;
+        }
     }
 
 ${({ labelPosition }) => {
