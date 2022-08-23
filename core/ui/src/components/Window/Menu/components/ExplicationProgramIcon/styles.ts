@@ -1,12 +1,17 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export default styled.div`
+export default styled.div<{show:boolean}>`
     width:100%;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     height: 230px;
     padding:21px;
     box-sizing: border-box;
+    opacity:0;
+    transition:opacity 0.2s linear;
+    ${({ show }) => show && css`
+        opacity:1;
+    `}
 
     h2{
         font-weight: 400;
