@@ -12,7 +12,7 @@ interface MenuProps{
 const Menu:React.FC<MenuProps> = ({ programs }) => {
   const [open, setOpen] = useState(false)
   const [focusProgram, setFocusProgram] = useState<program>()
-  return <Container open={!open}>
+  return <Container open={open}>
     {programs && programs.map(program => (
       <ProgramIcon key={program.key} onMouseEnter={() => setFocusProgram(program)} onMouseLeave={() => setFocusProgram(undefined)} text={program.programText} />
     ))}
