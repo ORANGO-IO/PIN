@@ -9,6 +9,7 @@
         "dom", 
         "esnext"
     ],
+    "resolveJsonModule": true,
     "paths": {
       "@core/*": ["./core/*"],
       "@apps/*": ["./apps/*"],
