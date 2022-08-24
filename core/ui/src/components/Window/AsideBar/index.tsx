@@ -1,11 +1,15 @@
 import useDimension from '../../../services/hooks/useDimension'
 import React, { useEffect, useRef, useState } from 'react'
-import OptionBar from './components/OptionBar'
 import Container, { ButtonStyle, ButtonContainer } from './styles'
 import Button from '../../Button'
 /* global HTMLButtonElement */
 /* global HTMLElement */
-const AsideBar = () => {
+
+interface AsideBarProps{
+  children:React.ReactNode
+}
+
+const AsideBar:React.FC<AsideBarProps> = ({ children }) => {
   const ref = useRef<HTMLButtonElement>(null)
   const refAside = useRef<HTMLElement>(null)
   const { width: widthAside } = useDimension(refAside)
@@ -30,9 +34,7 @@ const AsideBar = () => {
     <Container width={widthAside} ref={refAside} sizeType={sizeType} open={open}>
         <button ref={ref} className="modal" onClick={() => setOpen(false)}></button>
         <ul>
-            <OptionBar status='Normal' text='teste' element={<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>}/>
-            <OptionBar status='Normal' text='teste2' element={<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>}/>
-            <OptionBar status='Normal' text='teste3' element={<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>}/>
+            {children}
         </ul>
     </Container>
     {!open && sizeType === 'small' && <>
