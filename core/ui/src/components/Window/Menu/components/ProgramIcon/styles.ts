@@ -15,18 +15,18 @@ export default styled.button`
         color: #fff;
         margin:0;
         transition: opacity 0.2s linear;
+        font-family: 'Ubuntu', sans-serif;
     
     }
 
     >div{
         display:flex;
-    align-items:center;
-    justify-content:center;
+        align-items:center;
+        justify-content:center;
         transition: background 0.2s linear;
         border-radius: 16px;
-        
-    width:64px;
-    height:64px;
+        width:64px;
+        height:64px;
     }
     
     :hover{
@@ -36,6 +36,7 @@ export default styled.button`
         }
         p{
             opacity:0;
+            font-family: 'Ubuntu', sans-serif;
         }
     }
 `

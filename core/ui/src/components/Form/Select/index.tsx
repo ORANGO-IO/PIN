@@ -28,7 +28,8 @@ export const Select = <Option, IsMulti extends boolean = false, Group extends Gr
           placeholder: props => ({
             ...props,
             fontSize: '15px',
-            color: '#55514F'
+            color: '#55514F',
+            fontFamily: 'Ubuntu'
           }),
           singleValue: props => ({
             ...props,

@@ -7,12 +7,14 @@ export default styled.div`
     padding:14px;
     width:100%;
     box-sizing:border-box;
+    font-family: 'Ubuntu', sans-serif;
 
     .title{
         margin-bottom: 3px;
         font-size: 15px;    
         margin:0;
         display:flex;
+        font-family: 'Ubuntu', sans-serif;
     }
 
     .subtitle{
@@ -23,6 +25,7 @@ export default styled.div`
         color: #3C3C3C;
         p{
             margin:0;
+            font-family: 'Ubuntu', sans-serif;
         }
 
     }

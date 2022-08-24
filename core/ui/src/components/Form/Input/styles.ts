@@ -4,19 +4,18 @@ export default styled.div<{labelPosition?:'Top'|'Bottom'|'Left'|'Right'}>`
     display:flex;
     width:100%;
     label{
-        font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 17px;
-
-    color: #98948F;
-
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 17px;
+        color: #98948F;
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+        font-family: 'Ubuntu', sans-serif;
     }
 
     input{
         width:100%;
+        font-family: 'Ubuntu', sans-serif;
         background: #FCFCFC;
         height:27px;
         border: 1px solid #929292;

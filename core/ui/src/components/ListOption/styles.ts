@@ -9,4 +9,11 @@ export default styled.div`
     justify-content:space-between;
     padding:0 14px;
     border-bottom: 1px solid #CECBC8;
+    font-family: 'Ubuntu', sans-serif;
+
+    button{
+        border:none;
+        background:none;
+        font-family: 'Ubuntu', sans-serif;
+    }
 `

@@ -14,4 +14,5 @@ export default styled.div<{colorText:string;background:string}>`
     justify-content:center;
     border-radius: 5px;
     width: fit-content;
+    font-family: 'Ubuntu', sans-serif;
 `

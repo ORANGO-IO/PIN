@@ -17,6 +17,7 @@ export default styled.div<{show:boolean}>`
         font-weight: 400;
         font-size: 24px;
         color: #FFFFFF;
+        font-family: 'Ubuntu', sans-serif;
     }
 
     >div{
@@ -32,7 +33,7 @@ export default styled.div<{show:boolean}>`
             font-weight: 300;
             font-size: 14px;
             line-height: 16px;
-
+            font-family: 'Ubuntu', sans-serif;
             color: rgba(255, 255, 255, 0.8);
         }
     }

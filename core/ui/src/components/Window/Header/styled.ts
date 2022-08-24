@@ -16,5 +16,6 @@ export default styled.header`
         text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
         font-weight: 700;
         font-size: 15px;
+        font-family: 'Ubuntu', sans-serif;
     }
 `

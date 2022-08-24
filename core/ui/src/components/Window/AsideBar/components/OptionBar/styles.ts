@@ -9,6 +9,7 @@ export default styled.li<{status:'Active'|'Disabled'|'Normal'}>`
     column-gap:13px;
     box-sizing:border-box;
     cursor:pointer;
+    font-family: 'Ubuntu', sans-serif;
 
     >div{
         display:flex;
@@ -20,9 +21,13 @@ export default styled.li<{status:'Active'|'Disabled'|'Normal'}>`
     p{
         color:#3C3C3C;
         margin:0;
-        font-size:15px
+        font-size:15px;
+        font-family: 'Ubuntu', sans-serif;
     }
 
+    :hover{
+        background-color:#F7F7F7
+    }
 
     ${({ status }) => {
         switch (status) {
@@ -34,6 +39,9 @@ export default styled.li<{status:'Active'|'Disabled'|'Normal'}>`
                     }
                     p{
                         color: #000000;
+                    }
+                    :hover{
+                        background-color:#00D56C
                     }
                     `
             case 'Disabled':
@@ -50,7 +58,5 @@ export default styled.li<{status:'Active'|'Disabled'|'Normal'}>`
         }
     }}
 
-    :hover{
-        background-color:#F7F7F7
-    }
+   
 `

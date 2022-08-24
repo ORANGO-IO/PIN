@@ -13,9 +13,9 @@ export default styled.aside<{sizeType:'normal'|'small';open:boolean;width:number
         height:100%;
         z-index:2;
         width: 100%;
-    max-width:240px;
-    border-right: 1px solid #E0DEDC;
-    box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.25);
+        max-width:240px;
+        border-right: 1px solid #E0DEDC;
+        box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.25);
     }
 
     .modal{
@@ -53,17 +53,17 @@ export default styled.aside<{sizeType:'normal'|'small';open:boolean;width:number
 `
 
 export const ButtonStyle = styled.div`
-width:20px;
-height:20px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-span{
-    width:100%;
-    background: #DADADA;
-    height:2px;
+    width:20px;
+    height:20px;
     display:flex;
-}
+    flex-direction:column;
+    justify-content:space-between;
+    span{
+        width:100%;
+        background: #DADADA;
+        height:2px;
+        display:flex;
+    }
 
 
 `
