@@ -7,17 +7,20 @@ interface HeaderProps {
   title: string;
   buttonClick?: React.MouseEventHandler<HTMLButtonElement>;
   buttonDisabled?: boolean;
-  leftComponent?: React.ReactNode;
+  rightComponent?: React.ReactNode;
+  buttonLabel?:string
+
 }
 
 const Header: React.FC<HeaderProps> = ({
   title,
   buttonDisabled,
   buttonClick,
-  leftComponent
+  rightComponent,
+  buttonLabel
 }) => (
   <Container>
-    <div>
+    <div className='button_header_container'>
       <HeaderButton disabled={buttonDisabled} onClick={buttonClick}>
         <svg
           width="8"
@@ -35,9 +38,10 @@ const Header: React.FC<HeaderProps> = ({
           />
         </svg>
       </HeaderButton>
+      <p>{buttonLabel}</p>
     </div>
     <p>{title}</p>
-    <div>{leftComponent}</div>
+    <div>{rightComponent}</div>
   </Container>
 )
 

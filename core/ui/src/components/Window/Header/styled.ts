@@ -18,4 +18,10 @@ export default styled.header`
         font-size: 15px;
         font-family: 'Ubuntu', sans-serif;
     }
+
+    .button_header_container{
+        display:flex;
+        align-items:center;
+        column-gap:7px;
+    }
 `
