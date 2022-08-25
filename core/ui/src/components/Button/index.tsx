@@ -12,7 +12,8 @@ export default styled.button`
     border: 1px solid #929292;
     box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
     border-radius: 5px;
-
+    cursor:pointer;
+    
     :hover{
         background: linear-gradient(180deg, #E0E0E0 0%, #F3F3F3 100%);
         border: 1px solid #DB815D;
