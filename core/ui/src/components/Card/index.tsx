@@ -3,18 +3,21 @@ import Badge from '../Badge'
 import Container from './styles'
 
 interface CardProps{
-    subtitleTexts:{key:string, text:string}[]
+    subtitleTexts:{id:string, text:string}[];
+    title:string;
+    badges:{id:string;text:string;colorBackground?:string;colorText?:string}[]
+
 }
 
-const Card:React.FC<CardProps> = ({ subtitleTexts }) => (
+const Card:React.FC<CardProps> = ({ subtitleTexts, badges, title }) => (
     <Container>
         <p className='title'>
-            testestsetestes <Badge background='linear-gradient(180deg, #30CDFF 0%, #0D82A7 100%)' colorText='#fff'>
-              Internado
-            </Badge>
+            {title} {badges.map(badge => <Badge key={badge.id} background={badge.colorBackground} colorText={badge.colorText}>
+              {badge.text}
+            </Badge>)}
         </p>
         <div className='subtitle'>
-            {subtitleTexts.map((subtitle) => <p key={subtitle.key}>{subtitle.text}</p>)}
+            {subtitleTexts.map((subtitle) => <p key={subtitle.id}>{subtitle.text}</p>)}
         </div>
     </Container>
 )
