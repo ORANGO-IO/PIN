@@ -23,10 +23,13 @@ const Menu:React.FC<MenuProps> = ({ programs }) => {
   const [open, setOpen] = useState(false)
   const [focusProgram, setFocusProgram] = useState<program>()
   return <Container open={open}>
+    <div className="menu_programs_container">
     {programs && programs.map(program => (
       <ProgramIcon onClick={program.onClick} key={program.key} onMouseEnter={() => setFocusProgram(program)} icon={program.ProgramIcon} onMouseLeave={() => setFocusProgram(undefined)} text={program.programText} />
     ))}
-    <ExplicationProgramIcon show={!!focusProgram} className='explication' title={focusProgram?.TitleExplication } icon={focusProgram?.ExplicationProgramIcon} text={focusProgram?.ExplicationProgramText} style={{ position: 'absolute', bottom: '104px', width: '80%' }}/>
+
+    </div>
+    <ExplicationProgramIcon show={!!focusProgram} className='explication' title={focusProgram?.TitleExplication } icon={focusProgram?.ExplicationProgramIcon} text={focusProgram?.ExplicationProgramText} />
     <MenuButton onClick={() => setOpen(!open)} className="buttonMenu"/>
   </Container>
 }

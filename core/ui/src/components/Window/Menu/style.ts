@@ -1,14 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
-
-const height = keyframes`
-    from {
-    opacity:0;
-  }
-
-  to {
-    opacity:1;
-  }
-`
+import styled, { css } from 'styled-components'
 
 export default styled.div<{open:boolean}>`
     display:flex;
@@ -16,6 +6,7 @@ export default styled.div<{open:boolean}>`
     padding-top:32px;
     width:100%;
     height:66px;
+    flex-direction:column;
     transition: height 0.2s linear;
     align-items:baseline;
 
@@ -27,6 +18,7 @@ export default styled.div<{open:boolean}>`
     left:0;
     box-sizing:border-box;
     transition:height 0.5s linear;
+    justify-content:space-between;
     
     .container{
         position:absolute;
@@ -39,9 +31,17 @@ export default styled.div<{open:boolean}>`
         left:18px;
 
     }
+
+    .menu_programs_container{
+        display:flex;
+        flex-wrap:wrap;
+        transition:opacity 0.2s linear;
+        padding-bottom:16px;
+        overflow:auto;
+    }
    
     ${({ open }) => !open && css`
-    .explication{
+    .explication,.menu_programs_container{
         opacity:0;
         user-select:none;
         pointer-events:none;
@@ -50,12 +50,7 @@ export default styled.div<{open:boolean}>`
     `} 
     ${({ open }) => open && css`
         height:100vh;
-        /* .explication{
-            animation-name:${height};
-            animation-delay:0.5s;
-            animation-duration: 0s;
-            animation-fill-mode: forwards;
-        } */
+        padding-bottom:95px;
 
     `}
 `
