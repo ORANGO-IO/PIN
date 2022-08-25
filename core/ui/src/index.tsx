@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import Header from './components/Window/Header'
 import AsideBar from './components/Window/AsideBar'
 import Main from './components/Window/Main'
@@ -21,7 +21,14 @@ import Card from './components/Card'
 import Search from './components/Search'
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false)
+  const [userFilter, setUserFilter] = useState('')
   const [typeMenu, setTypeMenu] = useState('normal')
+  const [cardFilter, setCardFilter] = useState(card)
+
+  useEffect(() => {
+    const newCardFilter = card.filter(card => card.title.includes(userFilter))
+    setCardFilter(newCardFilter)
+  }, [userFilter])
 
   return (
     <>
@@ -42,7 +49,7 @@ const App: FC = () => {
           }}
         >
           <Header
-            title="teste"
+            title="Editar Usuário"
             buttonLabel='Cancelar'
             rightComponent={<ButtonConfirm type="button" onClick={() => setOpenModal(false)}>Confirmar</ButtonConfirm>}
             buttonClick={() => setOpenModal(false)}
@@ -86,7 +93,7 @@ const App: FC = () => {
         </div>
       </Modal>
       <div style={{ display: 'flex', flexDirection: 'column', height: '80vh' }}>
-        <Header title="Sair" buttonLabel='buttonLabel' />
+        <Header title="Hospital Maternidade Luís Eduardo Magalhães - Recepção" buttonLabel='Sair' />
         <Content>
           <AsideBar>
             {typeMenu === 'normal'
@@ -103,8 +110,11 @@ const App: FC = () => {
                 />
               ))
               : <div>
-                <Search containerProps={{ style: { padding: '16px', boxSizing: 'border-box' } }}/>
-                {card.map(card => (
+                <Search inputProps={{
+                  value: userFilter,
+                  onChange: (e) => setUserFilter(e.target.value)
+                }} containerProps={{ style: { padding: '16px', boxSizing: 'border-box' } }}/>
+                {cardFilter.map(card => (
                   <Card key={card.id} badges={card.badges} subtitleTexts={card.subtitlesTexts} title={card.title}/>
                 ))}
               </div>

@@ -1,17 +1,17 @@
 [
     {
         "id":"1",
-        "text":"teste2",
+        "text":"Recepção",
         "status":"Normal"
     },
     {
         "id":"1",
-        "text":"teste2",
+        "text":"Triagem",
         "status":"Active"
     },
     {
         "id":"1",
-        "text":"teste2",
+        "text":"Atendimento",
         "status":"Disabled"
     }
 ]
