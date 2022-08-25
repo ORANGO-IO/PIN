@@ -10,10 +10,12 @@ export default styled.div`
     padding:0 14px;
     border-bottom: 1px solid #CECBC8;
     font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
 
     button{
         border:none;
         background:none;
         font-family: 'Ubuntu', sans-serif;
+        cursor:pointer;
     }
 `

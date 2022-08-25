@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => (
   <Container>
     <div className='button_header_container'>
-      <HeaderButton disabled={buttonDisabled} onClick={buttonClick}>
+      <HeaderButton type="button" disabled={buttonDisabled} onClick={buttonClick}>
         <svg
           width="8"
           height="13"
