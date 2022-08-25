@@ -14,14 +14,22 @@ import ButtonConfirm from './components/ButtonConfirm'
 import OptionBar from './components/Window/AsideBar/components/OptionBar'
 import options from './mocks/options.json'
 import menu from './mocks/menu.json'
+import card from './mocks/card.json'
 import tool from './assets/icons/tool.svg'
-import bell from './assets/icons/icon.svg'
 import loja from './assets/icons/loja.svg'
+import Card from './components/Card'
+import Search from './components/Search'
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false)
   const [typeMenu, setTypeMenu] = useState('normal')
 
   return (
+    <>
+    <div style={{ position: 'fixed', top: '16px', right: '16px', zIndex: 10, background: '#fff' }}>
+      <h4>Tipo de menu</h4>
+      <button type="button" onClick={() => setTypeMenu('userSearch')}>Com pesquisa de usuario</button>
+      <button type="button" onClick={() => setTypeMenu('normal')}>Menu de rotas</button>
+    </div>
     <div>
       <Modal open={openModal} modalBackgroundClick={() => setOpenModal(false)}>
         <div
@@ -81,7 +89,8 @@ const App: FC = () => {
         <Header title="Sair" buttonLabel='buttonLabel' />
         <Content>
           <AsideBar>
-            {menu.map((option) => (
+            {typeMenu === 'normal'
+              ? menu.map((option) => (
                 <OptionBar
                 key={option.id}
                 status={option.status as any}
@@ -92,7 +101,14 @@ const App: FC = () => {
                   </svg>
                 }
                 />
-            ))}
+              ))
+              : <div>
+                <Search containerProps={{ style: { padding: '16px', boxSizing: 'border-box' } }}/>
+                {card.map(card => (
+                  <Card key={card.id} badges={card.badges} subtitleTexts={card.subtitlesTexts} title={card.title}/>
+                ))}
+              </div>
+            }
           </AsideBar>
           <Main
             style={{
@@ -336,6 +352,7 @@ const App: FC = () => {
         ]}
       />
     </div>
+    </>
   )
 }
 

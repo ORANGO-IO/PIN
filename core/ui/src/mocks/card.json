@@ -1,0 +1,11 @@
+[
+    {
+        "id":"1",
+        "title":"teste",
+        "badges":[{
+            "id":"1",
+            "text":"texto"
+        }],
+        "subtitlesTexts":[{"id":"1","text":"texto"}]
+    }
+]
