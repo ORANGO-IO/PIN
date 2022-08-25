@@ -16,6 +16,9 @@ export default styled.button`
         margin:0;
         transition: opacity 0.2s linear;
         font-family: 'Ubuntu', sans-serif;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width:64px;
     
     }
 
