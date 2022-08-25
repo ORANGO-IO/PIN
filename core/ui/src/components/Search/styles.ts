@@ -13,7 +13,8 @@ export default styled.div`
         align-items:center;
         justify-content:center;
         width: 27px;
-        padding:0;
+        cursor:pointer;
+        padding:6px;
         margin:0;
         height: 27px;
         font-family: 'Ubuntu', sans-serif;
