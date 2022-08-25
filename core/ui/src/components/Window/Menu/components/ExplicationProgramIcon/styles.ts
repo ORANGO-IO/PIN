@@ -15,6 +15,7 @@ export default styled.div<{show:boolean}>`
 
     h2{
         font-weight: 400;
+        margin:0;
         font-size: 24px;
         color: #FFFFFF;
         font-family: 'Ubuntu', sans-serif;
@@ -27,6 +28,8 @@ export default styled.div<{show:boolean}>`
 
         >div{
             max-width:130px;
+            width:100%;
+
             max-height:120px;
         }
         p{
