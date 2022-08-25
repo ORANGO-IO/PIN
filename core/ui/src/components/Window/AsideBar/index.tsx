@@ -18,7 +18,6 @@ const AsideBar:React.FC<AsideBarProps> = ({ children }) => {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    console.log(width)
     let newSizeType:'normal'|'small' = 'normal'
 
     if (width <= 600) {
