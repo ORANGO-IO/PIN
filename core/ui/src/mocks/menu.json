@@ -1,10 +1,17 @@
 [
     {
         "id":"1",
-        "text":"teste2"
+        "text":"teste2",
+        "status":"Normal"
     },
     {
         "id":"1",
-        "text":"teste2"
+        "text":"teste2",
+        "status":"Active"
+    },
+    {
+        "id":"1",
+        "text":"teste2",
+        "status":"Disabled"
     }
 ]

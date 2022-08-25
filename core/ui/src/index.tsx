@@ -15,8 +15,8 @@ import OptionBar from './components/Window/AsideBar/components/OptionBar'
 import options from './mocks/options.json'
 import menu from './mocks/menu.json'
 import tool from './assets/icons/tool.svg'
+import bell from './assets/icons/icon.svg'
 import loja from './assets/icons/loja.svg'
-
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false)
   const [typeMenu, setTypeMenu] = useState('normal')
@@ -78,22 +78,18 @@ const App: FC = () => {
         </div>
       </Modal>
       <div style={{ display: 'flex', flexDirection: 'column', height: '80vh' }}>
-        <Header title="teste" buttonLabel='buttonLabel' />
+        <Header title="Sair" buttonLabel='buttonLabel' />
         <Content>
           <AsideBar>
-            {menu.map((option, index) => (
+            {menu.map((option) => (
                 <OptionBar
                 key={option.id}
-                status={index % 2 === 0 ? 'Normal' : 'Active'}
+                status={option.status as any}
                 text={option.text}
                 element={
-                  <svg
-                    width="15"
-                    height="16"
-                    viewBox="0 0 15 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  ></svg>
+                  <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6512 12.2558V7.51163C12.6512 4.86279 10.7851 2.64884 8.30233 2.11116V1.18605C8.30233 0.529767 7.77256 0 7.11628 0C6.46 0 5.93023 0.529767 5.93023 1.18605V2.11116C3.44744 2.64884 1.5814 4.86279 1.5814 7.51163V12.2558L0 13.8372V14.6279H14.2326V13.8372L12.6512 12.2558ZM7.11629 17C7.98605 17 8.68978 16.2963 8.68978 15.4265H5.5428C5.5428 16.2963 6.24652 17 7.11629 17ZM7.90698 9.10093H10.2791V7.51163H7.90698V5.13953H6.32558V7.51163H3.95349V9.10093H6.32558V11.473H7.90698V9.10093Z" fill="black"/>
+                  </svg>
                 }
                 />
             ))}
