@@ -52,7 +52,9 @@ Group extends GroupBase<Option> = GroupBase<Option>
           placeholder: props => ({
             ...props,
             fontSize: '15px',
-            color: '#55514F'
+            color: '#55514F',
+            fontFamily: 'Ubuntu',
+            fontWeight: 400
           }),
           singleValue: props => ({
             ...props,
