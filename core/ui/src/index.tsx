@@ -11,7 +11,7 @@ import Modal from "./components/Window/Modal";
 import Button from "./components/Button";
 import Input from "./components/Form/Input";
 import ButtonConfirm from "./components/ButtonConfirm";
-import OptionBar from "./components/Window/AsideBar/components/OptionBar";
+import ItemNavBar from "./components/Window/AsideBar/components/ItemNavBar";
 import options from "./mocks/options.json";
 import menu from "./mocks/menu.json";
 import card from "./mocks/card.json";
@@ -127,7 +127,7 @@ const App: FC = () => {
             <AsideBar>
               {typeMenu === "normal" ? (
                 menu.map((option) => (
-                  <OptionBar
+                  <ItemNavBar
                     key={option.id}
                     status={option.status as any}
                     text={option.text}
