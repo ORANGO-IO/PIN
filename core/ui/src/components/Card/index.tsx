@@ -1,6 +1,6 @@
-import React from "react";
-import Badge from "../Badge";
-import Container from "./styles";
+import React from 'react'
+import Badge from '../Badge'
+import Container from './styles'
 
 interface CardProps {
   subtitleTexts: { id: string; text: string }[];
@@ -16,7 +16,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ subtitleTexts, badges = [], title }) => (
   <Container>
     <p className="title">
-      {title}{" "}
+      {title}{' '}
       {badges.map((badge) => (
         <Badge
           key={badge.id}
@@ -33,6 +33,6 @@ const Card: React.FC<CardProps> = ({ subtitleTexts, badges = [], title }) => (
       ))}
     </div>
   </Container>
-);
+)
 
-export default Card;
+export default Card

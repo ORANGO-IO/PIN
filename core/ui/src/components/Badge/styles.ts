@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-const DEFAULT_BACKGROUND = "linear-gradient(180deg, #30CDFF 0%, #0D82A7 100%)";
-const DEFAULT_COLOR_TEXT = "#fff";
+const DEFAULT_BACKGROUND = 'linear-gradient(180deg, #30CDFF 0%, #0D82A7 100%)'
+const DEFAULT_COLOR_TEXT = '#fff'
 
 export default styled.div<{ colorText?: string; background?: string }>`
   color: ${({ colorText }) => colorText || DEFAULT_COLOR_TEXT};
@@ -19,4 +19,4 @@ export default styled.div<{ colorText?: string; background?: string }>`
   border-radius: 5px;
   width: fit-content;
   font-family: "Ubuntu", sans-serif;
-`;
+`

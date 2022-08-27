@@ -1,54 +1,54 @@
-import { createRoot } from "react-dom/client";
-import React, { FC, useEffect, useState } from "react";
-import Header from "./components/Window/Header";
-import AsideBar from "./components/Window/AsideBar";
-import Main from "./components/Window/Main";
-import Menu from "./components/Window/Menu";
-import { MultiSelect } from "./components/Form/MultiSelect";
-import Content from "./components/Window/Content";
-import ListOption from "./components/ListOption";
-import Modal from "./components/Window/Modal";
-import Button from "./components/Button";
-import Input from "./components/Form/Input";
-import ButtonConfirm from "./components/ButtonConfirm";
-import ItemNavBar from "./components/Window/AsideBar/components/ItemNavBar";
-import options from "./mocks/options.json";
-import menu from "./mocks/menu.json";
-import card from "./mocks/card.json";
-import tool from "./assets/icons/tool.svg";
-import loja from "./assets/icons/store.svg";
-import Card from "./components/Card";
-import Search from "./components/Search";
-import ContainerWindow from "./components/Window/ContainerWindow";
+import { createRoot } from 'react-dom/client'
+import React, { FC, useEffect, useState } from 'react'
+import Header from './components/Window/Header'
+import AsideBar from './components/Window/AsideBar'
+import Main from './components/Window/Main'
+import Menu from './components/Window/Menu'
+import { MultiSelect } from './components/Form/MultiSelect'
+import Content from './components/Window/Content'
+import ListOption from './components/ListOption'
+import Modal from './components/Window/Modal'
+import Button from './components/Button'
+import Input from './components/Form/Input'
+import ButtonConfirm from './components/ButtonConfirm'
+import ItemNavBar from './components/Window/AsideBar/components/ItemNavBar'
+import options from './mocks/options.json'
+import menu from './mocks/menu.json'
+import card from './mocks/card.json'
+import tool from './assets/icons/tool.svg'
+import loja from './assets/icons/store.svg'
+import Card from './components/Card'
+import Search from './components/Search'
+import ContainerWindow from './components/Window/ContainerWindow'
 const App: FC = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const [userFilter, setUserFilter] = useState("");
-  const [typeMenu, setTypeMenu] = useState("normal");
-  const [cardFilter, setCardFilter] = useState(card);
+  const [openModal, setOpenModal] = useState(false)
+  const [userFilter, setUserFilter] = useState('')
+  const [typeMenu, setTypeMenu] = useState('normal')
+  const [cardFilter, setCardFilter] = useState(card)
 
   useEffect(() => {
     const newCardFilter = card.filter((card) =>
       card.title.includes(userFilter)
-    );
-    setCardFilter(newCardFilter);
-  }, [userFilter]);
+    )
+    setCardFilter(newCardFilter)
+  }, [userFilter])
 
   return (
     <>
       <div
         style={{
-          position: "fixed",
-          top: "16px",
-          right: "16px",
+          position: 'fixed',
+          top: '16px',
+          right: '16px',
           zIndex: 10,
-          background: "#fff",
+          background: '#fff'
         }}
       >
         <h4>Tipo de menu</h4>
-        <button type="button" onClick={() => setTypeMenu("userSearch")}>
+        <button type="button" onClick={() => setTypeMenu('userSearch')}>
           Com pesquisa de usuario
         </button>
-        <button type="button" onClick={() => setTypeMenu("normal")}>
+        <button type="button" onClick={() => setTypeMenu('normal')}>
           Menu de rotas
         </button>
       </div>
@@ -59,11 +59,11 @@ const App: FC = () => {
         >
           <div
             style={{
-              display: "flex",
-              background: "#fff",
-              flexDirection: "column",
-              height: "40vh",
-              width: "435px",
+              display: 'flex',
+              background: '#fff',
+              flexDirection: 'column',
+              height: '40vh',
+              width: '435px'
             }}
           >
             <Header
@@ -79,36 +79,36 @@ const App: FC = () => {
               }
               buttonClick={() => setOpenModal(false)}
             />
-            <Content style={{ background: "#fff" }}>
-              <Main style={{ background: "#fff" }}>
+            <Content style={{ background: '#fff' }}>
+              <Main style={{ background: '#fff' }}>
                 <div
                   style={{
-                    padding: "14px 18px",
-                    borderBottom: "1px solid #D5CFC7",
+                    padding: '14px 18px',
+                    borderBottom: '1px solid #D5CFC7'
                   }}
                 >
                   <Input
-                    labelOptions={{ style: { minWidth: "115px" } }}
+                    labelOptions={{ style: { minWidth: '115px' } }}
                     label="Nome Completo"
                     labelPosition="Left"
                   />
                 </div>
                 <div
                   style={{
-                    padding: "14px 18px",
-                    borderBottom: "1px solid #D5CFC7",
+                    padding: '14px 18px',
+                    borderBottom: '1px solid #D5CFC7'
                   }}
                 >
                   <MultiSelect
-                    labelOptions={{ style: { minWidth: "115px" } }}
+                    labelOptions={{ style: { minWidth: '115px' } }}
                     label="Permissões"
                     labelPosition="Left"
                   />
                 </div>
                 <div
                   style={{
-                    borderBottom: "1px solid #D5CFC7",
-                    padding: "14px 18px",
+                    borderBottom: '1px solid #D5CFC7',
+                    padding: '14px 18px'
                   }}
                 >
                   <Button>Desabilitar Usuário</Button>
@@ -117,15 +117,16 @@ const App: FC = () => {
             </Content>
           </div>
         </Modal>
-        <ContainerWindow style={{ height: "80vh" }}>
+        <ContainerWindow style={{ height: '80vh' }}>
           <Header
             title="Hospital Maternidade Luís Eduardo Magalhães - Recepção"
             buttonLabel="Sair"
           />
           <Content>
             <AsideBar>
-              {typeMenu === "normal" ? (
-                menu.map((option) => (
+              {typeMenu === 'normal'
+                ? (
+                    menu.map((option) => (
                   <ItemNavBar
                     key={option.id}
                     status={option.status as any}
@@ -147,16 +148,17 @@ const App: FC = () => {
                       </svg>
                     }
                   />
-                ))
-              ) : (
+                    ))
+                  )
+                : (
                 <div>
                   <Search
                     inputProps={{
                       value: userFilter,
-                      onChange: (e) => setUserFilter(e.target.value),
+                      onChange: (e) => setUserFilter(e.target.value)
                     }}
                     containerProps={{
-                      style: { padding: "16px", boxSizing: "border-box" },
+                      style: { padding: '16px', boxSizing: 'border-box' }
                     }}
                   />
                   {cardFilter.map((card) => (
@@ -168,26 +170,26 @@ const App: FC = () => {
                     />
                   ))}
                 </div>
-              )}
+                  )}
             </AsideBar>
             <Main
               style={{
-                alignItems: "center",
-                display: "flex",
-                justifyContent: "center",
+                alignItems: 'center',
+                display: 'flex',
+                justifyContent: 'center'
               }}
             >
               <div
                 style={{
-                  display: "flex",
-                  background: "#fff",
-                  width: "100%",
-                  maxWidth: "447px",
-                  height: "100%",
-                  boxSizing: "border-box",
-                  maxHeight: "292px",
-                  border: "1px solid #C9C6C3",
-                  flexDirection: "column",
+                  display: 'flex',
+                  background: '#fff',
+                  width: '100%',
+                  maxWidth: '447px',
+                  height: '100%',
+                  boxSizing: 'border-box',
+                  maxHeight: '292px',
+                  border: '1px solid #C9C6C3',
+                  flexDirection: 'column'
                 }}
               >
                 {options.map((option) => (
@@ -382,7 +384,7 @@ const App: FC = () => {
                       </svg>
                     }
                     buttonOptions={{
-                      onClick: () => setOpenModal(true),
+                      onClick: () => setOpenModal(true)
                     }}
                   />
                 ))}
@@ -397,47 +399,47 @@ const App: FC = () => {
               ExplicationProgramIcon: (
                 <img
                   src={tool}
-                  style={{ width: "100%", objectFit: "contain" }}
+                  style={{ width: '100%', objectFit: 'contain' }}
                 />
               ),
               ProgramIcon: <img src={tool} />,
-              programText: "o321312312312312312i",
-              TitleExplication: "titulo",
-              ExplicationProgramText: "Explicação",
+              programText: 'o321312312312312312i',
+              TitleExplication: 'titulo',
+              ExplicationProgramText: 'Explicação'
             },
             {
               key: 1,
               ExplicationProgramIcon: (
                 <img
                   src={loja}
-                  style={{ width: "100%", objectFit: "contain" }}
+                  style={{ width: '100%', objectFit: 'contain' }}
                 />
               ),
               ProgramIcon: <img src={loja} />,
-              programText: "oi2",
-              TitleExplication: "titulo2",
-              ExplicationProgramText: "Explicação2",
+              programText: 'oi2',
+              TitleExplication: 'titulo2',
+              ExplicationProgramText: 'Explicação2'
             },
             {
               key: 2,
               ExplicationProgramIcon: (
                 <img
                   src={tool}
-                  style={{ width: "100%", objectFit: "contain" }}
+                  style={{ width: '100%', objectFit: 'contain' }}
                 />
               ),
               ProgramIcon: <img src={tool} />,
-              programText: "oi",
-              TitleExplication: "titulo",
-              ExplicationProgramText: "Explicação",
-            },
+              programText: 'oi',
+              TitleExplication: 'titulo',
+              ExplicationProgramText: 'Explicação'
+            }
           ]}
         />
       </div>
     </>
-  );
-};
+  )
+}
 
-const container = document.getElementById("app");
-const root = createRoot(container!);
-root.render(<App />);
+const container = document.getElementById('app')
+const root = createRoot(container!)
+root.render(<App />)

@@ -1,8 +1,8 @@
-import React from "react";
-import Container from "./styles";
+import React from 'react'
+import Container from './styles'
 
 interface IItemNavBarrops {
-  status: "Active" | "Disabled" | "Normal";
+  status: 'Active' | 'Disabled' | 'Normal';
   text: string;
   element: React.ReactNode;
 }
@@ -12,6 +12,6 @@ const ItemNavBar: React.FC<IItemNavBarrops> = ({ status, text, element }) => (
     <div>{element}</div>
     <p>{text}</p>
   </Container>
-);
+)
 
-export default ItemNavBar;
+export default ItemNavBar

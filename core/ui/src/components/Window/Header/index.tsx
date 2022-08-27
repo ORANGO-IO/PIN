@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderButton from './components/HeaderButton'
-import Container from './styled'
+import Container from './styles'
 /* global HTMLButtonElement */
 
 interface HeaderProps {

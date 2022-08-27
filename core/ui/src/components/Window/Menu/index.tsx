@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import MenuButton from './components/Button'
 import ExplicationProgramIcon from './components/ExplicationProgramIcon'
 import ProgramIcon from './components/ProgramIcon'
-import Container from './style'
+import Container from './styles'
 /* global HTMLButtonElement */
 
 type program={

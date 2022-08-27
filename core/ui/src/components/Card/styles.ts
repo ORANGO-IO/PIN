@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export default styled.div`
   background: #f7f7f7;
@@ -28,4 +28,4 @@ export default styled.div`
       font-family: "Ubuntu", sans-serif;
     }
   }
-`;
+`
