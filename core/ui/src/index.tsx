@@ -19,6 +19,7 @@ import tool from "./assets/icons/tool.svg";
 import loja from "./assets/icons/store.svg";
 import Card from "./components/Card";
 import Search from "./components/Search";
+import ContainerWindow from "./components/Window/ContainerWindow";
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const [userFilter, setUserFilter] = useState("");
@@ -116,9 +117,7 @@ const App: FC = () => {
             </Content>
           </div>
         </Modal>
-        <div
-          style={{ display: "flex", flexDirection: "column", height: "80vh" }}
-        >
+        <ContainerWindow style={{ height: "80vh" }}>
           <Header
             title="Hospital Maternidade Luís Eduardo Magalhães - Recepção"
             buttonLabel="Sair"
@@ -390,7 +389,7 @@ const App: FC = () => {
               </div>
             </Main>
           </Content>
-        </div>
+        </ContainerWindow>
         <Menu
           programs={[
             {
