@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderButton from './components/HeaderButton'
+import Button from '../../Button'
 import Container from './styles'
 /* global HTMLButtonElement */
 
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => (
   <Container>
     <div className='button_header_container'>
-      <HeaderButton type="button" disabled={buttonDisabled} onClick={buttonClick}>
+      <Button style={{ width: '31px', height: '31px' }} customType='orange-warning' type="button" disabled={buttonDisabled} onClick={buttonClick}>
         <svg
           width="8"
           height="13"
@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({
             stroke-linejoin="round"
           />
         </svg>
-      </HeaderButton>
+      </Button>
       <p>{buttonLabel}</p>
     </div>
     <p>{title}</p>
