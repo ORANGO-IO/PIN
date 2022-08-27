@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export default styled.button`
+export default styled.button<{customType?:'green-confirm'|'orange-warning'|'dark' | 'default'}>`
     width:auto;
     height:31px;
     display:flex;
@@ -15,7 +15,6 @@ export default styled.button`
     cursor:pointer;
     
     :hover{
-        background: linear-gradient(180deg, #E0E0E0 0%, #F3F3F3 100%);
         border: 1px solid #DB815D;
         box-shadow: 0px 0px 2px #DB815D, 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
     }
@@ -25,6 +24,22 @@ export default styled.button`
         border: 1px solid #DB815D;
         box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
     }
+
+    ${({ customType }) => {
+        switch (customType) {
+            case 'green-confirm':
+                return css`
+                    background: linear-gradient(180deg, #00D56C 0%, #04BB61 100%);
+                    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.05), inset 0px 0px 2px 1px #F38B6B;
+                    border: 1px solid #363632;
+
+                `
+            case 'orange-warning':
+                return css``
+            case 'dark':
+                return css``
+        }
+    }}
 
 
 `

@@ -10,7 +10,6 @@ import ListOption from './components/ListOption'
 import Modal from './components/Window/Modal'
 import Button from './components/Button'
 import Input from './components/Form/Input'
-import ButtonConfirm from './components/ButtonConfirm'
 import ItemNavBar from './components/Window/AsideBar/components/ItemNavBar'
 import options from './mocks/options.json'
 import menu from './mocks/menu.json'
@@ -70,12 +69,13 @@ const App: FC = () => {
               title="Editar Usuário"
               buttonLabel="Cancelar"
               rightComponent={
-                <ButtonConfirm
+                <Button
+                  customType='green-confirm'
                   type="button"
                   onClick={() => setOpenModal(false)}
                 >
                   Confirmar
-                </ButtonConfirm>
+                </Button>
               }
               buttonClick={() => setOpenModal(false)}
             />
