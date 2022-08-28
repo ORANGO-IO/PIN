@@ -1,53 +1,17 @@
-import styled, { css } from 'styled-components'
+import React, { ButtonHTMLAttributes } from 'react'
+import Container from './styles'
 
-export default styled.button<{customType?:'green-confirm'|'orange-warning'|'dark' | 'default'}>`
-    width:auto;
-    height:31px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:5px;
-    font-family: 'Ubuntu', sans-serif;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F3F1F1 100%);
-    border: 1px solid #929292;
-    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
-    border-radius: 5px;
-    cursor:pointer;
-  
-    ${({ customType }) => {
-        switch (customType) {
-            case 'green-confirm':
-                return css`
-                    background: linear-gradient(180deg, #00D56C 0%, #04BB61 100%);
-                    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.05), inset 0px 0px 2px 1px #F38B6B;
-                    border: 1px solid #363632;
+/* global HTMLButtonElement */
 
-                `
-            case 'orange-warning':
-                return css`
-                    background: linear-gradient(180deg, #F28665 0%, #DF4F1D 100%);
-                    border: 1px solid #363632;
-                    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.05), inset 0px 0px 2px 1px #F38B6B;
-                `
-            case 'dark':
-                return css`
-                    background: linear-gradient(180deg, #58554D 0%, #42413C 100%);
-                    border: 1px solid #363632;
-                    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.05), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.2);
-                `
-        }
-    }}
-  
-     :hover{
-        border: 1px solid #DB815D;
-        box-shadow: 0px 0px 2px #DB815D, 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
-    }
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+    children: React.ReactNode;
+    customType?:'green-confirm'|'orange-warning'|'dark' | 'default'
+}
 
-    :active{
-        background: linear-gradient(180deg, #FFFFFF 0%, #F3F1F1 100%);
-        border: 1px solid #DB815D;
-        box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
-    }
+const Button:React.FC<IButtonProps> = ({ children, ...rest }) => (
+    <Container {...rest}>
+        {children}
+    </Container>
+)
 
-
-`
+export default Button
