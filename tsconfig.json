@@ -9,7 +9,6 @@
         "dom", 
         "esnext"
     ],
-    "resolveJsonModule": true,
     "paths": {
       "@core/*": ["./core/*"],
       "@apps/*": ["./apps/*"],
@@ -20,8 +19,7 @@
     "sourceMap": true,
     "removeComments": true,
     "target": "esnext",
-    "outDir": "dist",
-    "baseUrl": "."
+    "outDir": "dist"
   },
   "exclude": ["node_modules", "dist"],
 }

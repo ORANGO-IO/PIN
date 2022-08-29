@@ -1,29 +1,35 @@
-const fs = require("fs");
-const path = require("path");
-const pluginName = process.argv[2];
-const pluginDir = `apps/${pluginName}`;
-const appDir = path.resolve(__dirname, "..", "..");
+const { exec } = require('child_process')
+const fs = require('fs')
+const path = require('path')
+const pluginName = process.argv[2]
+const pluginDir = `apps/${pluginName}`
+const appDir = path.resolve(__dirname, '..', '..')
 const installedAppsFile = `${appDir}/core/config/installed_apps.txt`;
 
 (function () {
   // Verificando se os apps base estão instalados ou foram removidos acidentalmente da lista de aplicações instaladas
-  console.log(`Verificando aplicações instaladas`);
-  const installedApps = fs.readFileSync(installedAppsFile, "utf8");
-  console.log(installedApps);
-  console.log(`Instalando plugin ${process.argv[2]} na pasta apps...`);
+  console.log('Verificando aplicações instaladas:')
+  const installedApps = fs.readFileSync(installedAppsFile, 'utf8')
+  console.log(installedApps)
+  // Verifica se os apps obrigatórios e necessários para a aplicação estão instalados
+  console.log(`Instalando plugin ${process.argv[2]} na pasta apps...`)
   // Encontrando os metadados
-  const metadata = require(`${appDir}/${pluginDir}/config/metadata.json`);
-  console.log(metadata);
+  const metadata = require(`${appDir}/${pluginDir}/config/metadata.json`)
+  console.log(metadata)
+  // Verificando package.json de apps para adicionar pacotes adicionais utilizados em outros apps
+  // Verificando os prisma schemas para validar se o nome dos models tem o nome do app na frente, evitando assim duplicidades
+  // Executando prismix, que unirá os schemas, em caso de validação bem sucedida
+  exec('yarn prismix')
   // Verificando as implementações que precisam serem feitas em banco
   // Dando build nas atualizações que precisam ser feitas no frontend
   // Adicionando à lista de aplicações instaladas
   fs.appendFile(installedAppsFile, `\n${pluginName}`, function (err) {
-    if (err) throw err;
-    console.log("Plugin instalado com sucesso!");
-  });
+    if (err) throw err
+    console.log('Plugin instalado com sucesso!')
+  })
 
   fs.readdir(pluginDir, (err, files) => {
-    files.forEach((file) => {});
-    console.log(err);
-  });
-})();
+    files.forEach((file) => console.log(file))
+    console.log(err)
+  })
+})()
