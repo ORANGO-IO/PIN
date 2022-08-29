@@ -3,7 +3,7 @@ import React, { LabelHTMLAttributes } from 'react'
 import ReactSelect, { GroupBase, Props } from 'react-select'
 import Container from './styles'
 /* global HTMLLabelElement */
-interface SelectProps<O, M extends boolean = false, T extends GroupBase<O> = GroupBase<O>>
+interface ISelectProps<O, M extends boolean = false, T extends GroupBase<O> = GroupBase<O>>
   extends Props<O, M, T> {
     label?:string;
     labelPosition?:'Top'|'Bottom'|'Left'|'Right',
@@ -19,7 +19,7 @@ Group extends GroupBase<Option> = GroupBase<Option>
     labelPosition,
     labelOptions,
     ...rest
-  }: SelectProps<Option, IsMulti, Group>) => {
+  }: ISelectProps<Option, IsMulti, Group>) => {
   return (
       <Container labelPosition={labelPosition}>
         {label &&

@@ -1,13 +1,13 @@
 import React from 'react'
 import Container from './styles'
 
-interface ModalProps{
+interface IModalProps{
     open:boolean;
     modalBackgroundClick?:Function;
     children:React.ReactNode
 }
 
-const Modal :React.FC<ModalProps> = ({ open, modalBackgroundClick, children }) => (
+const Modal :React.FC<IModalProps> = ({ open, modalBackgroundClick, children }) => (
     <Container open={open}>
         <button onClick={() => {
           if (modalBackgroundClick) {

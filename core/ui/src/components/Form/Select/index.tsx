@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactSelect, { GroupBase, Props } from 'react-select'
 
-interface SelectProps<O, M extends boolean = false, T extends GroupBase<O> = GroupBase<O>>
+interface ISelectProps<O, M extends boolean = false, T extends GroupBase<O> = GroupBase<O>>
   extends Props<O, M, T> {
 }
 
 export const Select = <Option, IsMulti extends boolean = false, Group extends GroupBase<Option> = GroupBase<Option>>({
   ...rest
-}: SelectProps<Option, IsMulti, Group>) => {
+}: ISelectProps<Option, IsMulti, Group>) => {
   return (
       <ReactSelect
       components={{

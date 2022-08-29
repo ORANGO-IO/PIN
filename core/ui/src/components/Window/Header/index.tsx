@@ -3,7 +3,7 @@ import Button from '../../Button'
 import Container from './styles'
 /* global HTMLButtonElement */
 
-interface HeaderProps {
+interface IHeaderProps {
   title: string;
   buttonClick?: React.MouseEventHandler<HTMLButtonElement>;
   buttonDisabled?: boolean;
@@ -12,7 +12,7 @@ interface HeaderProps {
 
 }
 
-const Header: React.FC<HeaderProps> = ({
+const Header: React.FC<IHeaderProps> = ({
   title,
   buttonDisabled,
   buttonClick,

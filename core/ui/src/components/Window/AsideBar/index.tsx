@@ -5,11 +5,11 @@ import Button from '../../Button'
 /* global HTMLButtonElement */
 /* global HTMLElement */
 
-interface AsideBarProps {
+interface IAsideBarProps {
   children: React.ReactNode;
 }
 
-const AsideBar: React.FC<AsideBarProps> = ({ children }) => {
+const AsideBar: React.FC<IAsideBarProps> = ({ children }) => {
   const ref = useRef<HTMLButtonElement>(null)
   const refAside = useRef<HTMLElement>(null)
   const { width: widthAside } = useDimension(refAside)

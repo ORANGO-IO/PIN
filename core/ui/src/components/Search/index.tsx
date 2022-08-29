@@ -4,13 +4,13 @@ import Container from './styles'
 /* global HTMLButtonElement */
 /* global HTMLInputElement */
 /* global HTMLElement */
-interface SearchProps{
+interface ISearchProps{
     buttonSearchClick?:React.MouseEventHandler<HTMLButtonElement>,
     inputProps?:InputHTMLAttributes<HTMLInputElement>,
     containerProps?:HTMLAttributes<HTMLElement>
 }
 
-const Search:React.FC<SearchProps> = ({ buttonSearchClick, inputProps, containerProps }) => (
+const Search:React.FC<ISearchProps> = ({ buttonSearchClick, inputProps, containerProps }) => (
     <Container {...containerProps}>
         <Input {...inputProps}/>
         <button onClick={buttonSearchClick}>

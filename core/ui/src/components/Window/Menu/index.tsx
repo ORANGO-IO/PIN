@@ -15,11 +15,11 @@ type program={
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-interface MenuProps{
+interface IMenuProps{
   programs?:program[]
 }
 
-const Menu:React.FC<MenuProps> = ({ programs }) => {
+const Menu:React.FC<IMenuProps> = ({ programs }) => {
   const [open, setOpen] = useState(false)
   const [focusProgram, setFocusProgram] = useState<program>()
   return <Container open={open}>

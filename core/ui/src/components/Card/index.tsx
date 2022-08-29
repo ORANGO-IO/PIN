@@ -2,7 +2,7 @@ import React from 'react'
 import Badge from '../Badge'
 import Container from './styles'
 
-interface CardProps {
+interface ICardProps {
   subtitleTexts: { id: string; text: string }[];
   title: string;
   badges?: {
@@ -13,7 +13,7 @@ interface CardProps {
   }[];
 }
 
-const Card: React.FC<CardProps> = ({ subtitleTexts, badges = [], title }) => (
+const Card: React.FC<ICardProps> = ({ subtitleTexts, badges = [], title }) => (
   <Container>
     <p className="title">
       {title}{' '}
