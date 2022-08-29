@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components'
 
 export default styled.div<{open:boolean}>`
     display:flex;
-    padding:0 10vw;
-    padding-top:32px;
     width:100%;
     height:66px;
     flex-direction:column;
@@ -41,14 +39,17 @@ export default styled.div<{open:boolean}>`
     }
    
     ${({ open }) => !open && css`
-    .explication,.menu_programs_container{
-        opacity:0;
-        user-select:none;
-        pointer-events:none;
-    }
+        .explication,.menu_programs_container{
+            opacity:0;
+            user-select:none;
+            padding:0;
+            pointer-events:none;
+        }
 
     `} 
     ${({ open }) => open && css`
+        padding:0 10vw;
+        padding-top:32px;
         height:100vh;
         padding-bottom:95px;
 
