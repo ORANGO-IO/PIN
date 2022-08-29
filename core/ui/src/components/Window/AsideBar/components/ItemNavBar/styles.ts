@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export default styled.li<{ status: 'Active' | 'Disabled' | 'Normal' }>`
+export default styled.li<{ status: 'active' | 'disabled' | 'normal' }>`
   width: 100%;
   height: 40px;
   display: flex;
@@ -32,7 +32,7 @@ export default styled.li<{ status: 'Active' | 'Disabled' | 'Normal' }>`
 
   ${({ status }) => {
     switch (status) {
-      case 'Active':
+      case 'active':
         return css`
           background-color: #00d56c;
           svg,
@@ -46,7 +46,7 @@ export default styled.li<{ status: 'Active' | 'Disabled' | 'Normal' }>`
             background-color: #00d56c;
           }
         `
-      case 'Disabled':
+      case 'disabled':
         return css`
           background-color: #ffffff;
           svg,

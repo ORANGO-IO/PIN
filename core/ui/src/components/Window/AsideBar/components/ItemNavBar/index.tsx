@@ -2,7 +2,7 @@ import React from 'react'
 import Container from './styles'
 
 interface IItemNavBarrops {
-  status: 'Active' | 'Disabled' | 'Normal';
+  status: 'active' | 'disabled' | 'normal' ;
   text: string;
   element: React.ReactNode;
 }

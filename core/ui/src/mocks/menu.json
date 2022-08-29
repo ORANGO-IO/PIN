@@ -2,16 +2,16 @@
     {
         "id":"1",
         "text":"Recepção",
-        "status":"Normal"
+        "status":"normal"
     },
     {
         "id":"1",
         "text":"Triagem",
-        "status":"Active"
+        "status":"active"
     },
     {
         "id":"1",
         "text":"Atendimento",
-        "status":"Disabled"
+        "status":"disabled"
     }
 ]
