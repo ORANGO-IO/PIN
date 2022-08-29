@@ -19,6 +19,8 @@ import loja from './assets/icons/store.svg'
 import Card from './components/Card'
 import Search from './components/Search'
 import ContainerWindow from './components/Window/ContainerWindow'
+import background from './assets/background.jpeg'
+
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false)
   const [userFilter, setUserFilter] = useState('')
@@ -34,6 +36,7 @@ const App: FC = () => {
 
   return (
     <>
+      <img style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', objectFit: 'cover' }} src={background} alt="fundo"/>
       <div
         style={{
           position: 'fixed',
@@ -51,7 +54,7 @@ const App: FC = () => {
           Menu de rotas
         </button>
       </div>
-      <div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Modal
           open={openModal}
           modalBackgroundClick={() => setOpenModal(false)}

@@ -7,6 +7,7 @@ export default styled.header`
     box-shadow: 0px -1px 0px #4F4E47;
     border-radius: 5px 5px 0px 0px;
     display:flex;
+    z-index:1;
     align-items:center;
     justify-content:space-between;
     padding:0 8px;
