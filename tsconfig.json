@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "jsx": "react",
     "module": "commonjs",
@@ -9,6 +10,7 @@
         "dom", 
         "esnext"
     ],
+    "baseUrl": ".",
     "paths": {
       "@core/*": ["./core/*"],
       "@apps/*": ["./apps/*"],

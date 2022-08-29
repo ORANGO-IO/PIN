@@ -1,7 +1,7 @@
-import useDimension from '../../../../services/hooks/useDimension'
+import useDimension from '@core/ui/src/services/hooks/useDimension'
 import React, { useEffect, useRef, useState } from 'react'
 import Container, { ButtonStyle, ButtonContainer } from './styles'
-import Button from '../../../Button'
+import Button from '@core/ui/src/components/Button'
 /* global HTMLButtonElement */
 /* global HTMLElement */
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../../Button'
+import Button from '@core/ui/src/components/Button'
 import Container from './styles'
 /* global HTMLButtonElement */
 

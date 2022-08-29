@@ -1,5 +1,5 @@
 import React from 'react'
-import Badge from '../Badge'
+import Badge from '@core/ui/src/components/Badge'
 import Container from './styles'
 
 interface ICardProps {

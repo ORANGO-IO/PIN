@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, InputHTMLAttributes } from 'react'
-import Input from '../Form/components/Input'
+import Input from '@core/ui/src/components/Form/components/Input'
 import Container from './styles'
 /* global HTMLButtonElement */
 /* global HTMLInputElement */
