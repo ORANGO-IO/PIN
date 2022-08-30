@@ -16,7 +16,7 @@ interface ICardProps {
 const Card: React.FC<ICardProps> = ({ subtitleTexts, badges = [], title }) => (
   <Container>
     <p className="title">
-      {title}{' '}
+      {title}
       {badges.map((badge) => (
         <Badge
           key={badge.id}

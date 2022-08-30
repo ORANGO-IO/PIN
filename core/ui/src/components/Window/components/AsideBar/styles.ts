@@ -16,6 +16,7 @@ export default styled.aside<{sizeType:'normal'|'small';open:boolean;width:number
         max-width:240px;
         border-right: 1px solid #E0DEDC;
         box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.25);
+        overflow:auto;
     }
 
     .modal{
@@ -37,6 +38,9 @@ export default styled.aside<{sizeType:'normal'|'small';open:boolean;width:number
         switch (sizeType) {
             case 'small':
                 return css`
+                position:absolute;
+                top:0;
+                left:0;
                 margin-left:${open ? 0 : `-${width}px`};
                 transition:margin-left 0.2s linear;
 

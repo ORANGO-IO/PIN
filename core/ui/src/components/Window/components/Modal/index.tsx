@@ -20,7 +20,7 @@ const Modal :React.FC<IModalProps> = ({ open, modalBackgroundClick, children }) 
 
   return ReactDOM.createPortal(
     (
-    <Container open={!open}>
+    <Container open={open}>
         <button onClick={() => {
           if (modalBackgroundClick) {
             modalBackgroundClick()
