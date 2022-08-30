@@ -61,63 +61,35 @@ const App: FC = () => {
         >
           <div
             style={{
-              display: 'flex',
-              background: '#fff',
-              flexDirection: 'column',
-              height: '40vh',
-              width: '435px'
+              padding: '14px 18px',
+              borderBottom: '1px solid #D5CFC7'
             }}
           >
-            <Header
-              title="Editar Usuário"
-              buttonLabel="Cancelar"
-              rightComponent={
-                <Button
-                  customType='green-confirm'
-                  type="button"
-                  onClick={() => setOpenModal(false)}
-                >
-                  Confirmar
-                </Button>
-              }
-              buttonClick={() => setOpenModal(false)}
+            <Input
+              labelOptions={{ style: { minWidth: '115px' } }}
+              label="Nome Completo"
+              labelPosition="Left"
             />
-            <Content style={{ background: '#fff' }}>
-              <Main style={{ background: '#fff' }}>
-                <div
-                  style={{
-                    padding: '14px 18px',
-                    borderBottom: '1px solid #D5CFC7'
-                  }}
-                >
-                  <Input
-                    labelOptions={{ style: { minWidth: '115px' } }}
-                    label="Nome Completo"
-                    labelPosition="Left"
-                  />
-                </div>
-                <div
-                  style={{
-                    padding: '14px 18px',
-                    borderBottom: '1px solid #D5CFC7'
-                  }}
-                >
-                  <MultiSelect
-                    labelOptions={{ style: { minWidth: '115px' } }}
-                    label="Permissões"
-                    labelPosition="Left"
-                  />
-                </div>
-                <div
-                  style={{
-                    borderBottom: '1px solid #D5CFC7',
-                    padding: '14px 18px'
-                  }}
-                >
-                  <Button>Desabilitar Usuário</Button>
-                </div>
-              </Main>
-            </Content>
+          </div>
+          <div
+            style={{
+              padding: '14px 18px',
+              borderBottom: '1px solid #D5CFC7'
+            }}
+          >
+            <MultiSelect
+              labelOptions={{ style: { minWidth: '115px' } }}
+              label="Permissões"
+              labelPosition="Left"
+            />
+          </div>
+          <div
+            style={{
+              borderBottom: '1px solid #D5CFC7',
+              padding: '14px 18px'
+            }}
+          >
+            <Button>Desabilitar Usuário</Button>
           </div>
         </Modal>
         <ContainerWindow style={{ height: '80vh' }}>
