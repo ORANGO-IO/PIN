@@ -8,15 +8,15 @@ import Header from '../Header'
 /* global HTMLButtonElement */
 
 interface IModalProps{
-    open:boolean;
-    modalBackgroundClick?:Function;
-    children:React.ReactNode
-    confirmButton?:React.MouseEventHandler<HTMLButtonElement>
-    goBack?:React.MouseEventHandler<HTMLButtonElement>
+  open:boolean
+  children:React.ReactNode
+  confirmButton?:React.MouseEventHandler<HTMLButtonElement>
+  goBack?:React.MouseEventHandler<HTMLButtonElement>
 }
+
 const modalRoot = document.getElementById('modals')
 
-const Modal :React.FC<IModalProps> = ({ open, modalBackgroundClick, children, confirmButton, goBack }) => {
+const Modal :React.FC<IModalProps> = ({ open, children, confirmButton, goBack }) => {
   const rootElemRef = React.useRef(document.createElement('div'))
 
   useEffect(() => {
@@ -29,10 +29,11 @@ const Modal :React.FC<IModalProps> = ({ open, modalBackgroundClick, children, co
   return ReactDOM.createPortal(
     (
     <Container open={open}>
-        <button onClick={() => {
-          if (modalBackgroundClick) {
-            modalBackgroundClick()
+        <button onClick={(e) => {
+          if (goBack) {
+            goBack(e)
           }
+          rootElemRef.current.remove()
         }} className="button-modal"></button>
         <div>
         <div
@@ -41,7 +42,8 @@ const Modal :React.FC<IModalProps> = ({ open, modalBackgroundClick, children, co
               background: '#fff',
               flexDirection: 'column',
               height: '40vh',
-              width: '435px'
+              width: '435px',
+              borderRadius: '5px'
             }}
           >
              <Header
@@ -56,7 +58,12 @@ const Modal :React.FC<IModalProps> = ({ open, modalBackgroundClick, children, co
                   Confirmar
                 </Button>
               }
-              buttonClick={goBack}
+              buttonClick={(e) => {
+                if (goBack) {
+                  goBack(e)
+                }
+                rootElemRef.current.remove()
+              }}
             />
             <Content style={{ background: '#fff' }}>
               <Main style={{ background: '#fff' }}>

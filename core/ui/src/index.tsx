@@ -20,6 +20,7 @@ import Card from './components/Card'
 import Search from './components/Search'
 import ContainerWindow from './components/Window/components/ContainerWindow'
 import background from './assets/background.jpeg'
+import { Select } from './components/Form/components/Select'
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -57,7 +58,6 @@ const App: FC = () => {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Modal
           open={openModal}
-          modalBackgroundClick={() => setOpenModal(false)}
         >
           <div
             style={{
@@ -167,6 +167,7 @@ const App: FC = () => {
                   flexDirection: 'column'
                 }}
               >
+              <Select options={[{ label: 'oi', value: 'oi' }, { label: 'oi', value: 'oi' }]}/>
                 {options.map((option) => (
                   <ListOption
                     key={option.id}

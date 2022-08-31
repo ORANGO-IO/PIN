@@ -56,7 +56,6 @@ export const Select = <Option, IsMulti extends boolean = false, Group extends Gr
               borderRadius: '5px',
               borderBottomLeftRadius: menuIsOpen ? 0 : '5px',
               borderBottomRightRadius: menuIsOpen ? 0 : '5px'
-            // background: theme.colors.white,
             }
           },
           valueContainer: props => ({
@@ -69,21 +68,29 @@ export const Select = <Option, IsMulti extends boolean = false, Group extends Gr
           menuList: props => ({
             ...props,
             width: '100%',
-            border: 0
+            border: 0,
+            padding: 0
+
           }),
           menu: props => ({
             ...props,
             width: '100%',
             borderTopLeftRadius: 0,
-            borderTopRightRadius: 0
+            borderTopRightRadius: 0,
+            padding: 0,
+            height: 'auto'
           }),
           option: (props, { isSelected }) => ({
             ...props,
             fontSize: '15px',
+            height: '24px',
             background: isSelected ? 'linear-gradient(180deg, #ED9666 0%, #F38B6B 100%)' : '#F5F5F5',
             color: isSelected ? '#fff' : '#55514F',
             textShadow: isSelected ? '0px -1px 0px rgba(0, 0, 0, 0.1)' : '',
-            border: isSelected ? '1px solid #DB815D' : ''
+            border: isSelected ? '1px solid #DB815D' : '',
+            margin: 0,
+            padding: 0,
+            paddingLeft: '8px'
 
           }),
           clearIndicator: props => ({

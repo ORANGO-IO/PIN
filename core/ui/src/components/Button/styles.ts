@@ -40,13 +40,9 @@ export default styled.button<{customType?:'green-confirm'|'orange-warning'|'dark
   
      :hover{
         border: 1px solid #DB815D;
-        box-shadow: 0px 0px 2px #DB815D, 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
     }
 
     :active{
         border: 1px solid #DB815D;
-        box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
     }
-
-
 `

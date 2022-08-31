@@ -43,7 +43,6 @@ Group extends GroupBase<Option> = GroupBase<Option>
             background: '#D9D9D9',
             borderRadius: '3px'
           }),
-
           input: props => ({
             ...props,
             padding: 0,
@@ -60,7 +59,6 @@ Group extends GroupBase<Option> = GroupBase<Option>
             ...props,
             fontSize: '14px',
             border: 0
-
           }),
           container: props => ({
             ...props,
@@ -69,7 +67,6 @@ Group extends GroupBase<Option> = GroupBase<Option>
             borderColor: '#929292',
             cursor: 'pointer',
             height: '31px'
-
           }),
           control: (props, { menuIsOpen }) => {
             return {
@@ -79,7 +76,6 @@ Group extends GroupBase<Option> = GroupBase<Option>
               background: '#FCFCFC',
               boxShadow: '0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px rgba(0, 0, 0, 0.06)',
               borderRadius: '5px'
-            // background: theme.colors.white,
             }
           },
           valueContainer: props => ({
@@ -87,27 +83,34 @@ Group extends GroupBase<Option> = GroupBase<Option>
             cursor: 'pointer',
             paddingTop: 0,
             border: 0,
-            paddingBottom: 0
+            paddingBottom: 0,
+            margin: 0
           }),
           menuList: props => ({
             ...props,
             width: '100%',
-            border: 0
+            border: 0,
+            padding: 0
           }),
           menu: props => ({
             ...props,
             width: '100%',
             borderTopLeftRadius: 0,
-            borderTopRightRadius: 0
+            padding: 0,
+            borderTopRightRadius: 0,
+            background: 'linear-gradient(180deg, #FFFFFF 0%, #F3F1F1 100%)'
           }),
           option: (props, { isSelected }) => ({
             ...props,
             fontSize: '15px',
+            height: '24px',
             background: isSelected ? 'linear-gradient(180deg, #ED9666 0%, #F38B6B 100%)' : '#F5F5F5',
             color: isSelected ? '#fff' : '#55514F',
             textShadow: isSelected ? '0px -1px 0px rgba(0, 0, 0, 0.1)' : '',
-            border: isSelected ? '1px solid #DB815D' : ''
-
+            border: isSelected ? '1px solid #DB815D' : '',
+            margin: 0,
+            padding: 0,
+            paddingLeft: '8px'
           }),
           clearIndicator: props => ({
             ...props,
