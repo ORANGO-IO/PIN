@@ -1,6 +1,6 @@
 import useDimension from '@core/ui/src/services/hooks/useDimension'
 import React, { useEffect, useRef, useState } from 'react'
-import Container, { ButtonStyle, ButtonContainer } from './styles'
+import Container, { ButtonStyle, ButtonContainer, Modal } from './styles'
 import Button from '@core/ui/src/components/Button'
 /* global HTMLButtonElement */
 /* global HTMLElement */
@@ -19,7 +19,7 @@ const AsideBar: React.FC<IAsideBarProps> = ({ children }) => {
 
   useEffect(() => {
     let newSizeType: 'normal' | 'small' = 'normal'
-
+    console.log('width', width)
     if (width <= 600) {
       newSizeType = 'small'
       setOpen(false)
@@ -36,13 +36,17 @@ const AsideBar: React.FC<IAsideBarProps> = ({ children }) => {
         sizeType={sizeType}
         open={open}
       >
-        <button
+        <nav>
+                <ul>{children}</ul>
+        </nav>
+      </Container>
+      <Modal
           ref={ref}
           className="modal"
+          sizeType={sizeType}
+          open={open}
           onClick={() => setOpen(false)}
-        ></button>
-        <ul>{children}</ul>
-      </Container>
+        ></Modal>
       {!open && sizeType === 'small' && (
         <>
           <ButtonContainer></ButtonContainer>
