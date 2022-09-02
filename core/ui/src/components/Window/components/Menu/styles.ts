@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components'
 
-export default styled.div<{open:boolean}>`
+export default styled.div`
     display:flex;
     width:100%;
     height:66px;
     flex-direction:column;
     transition: height 0.2s linear;
     align-items:baseline;
-
+    z-index:10;
     background: rgba(77, 76, 72, 0.8);
     backdrop-filter: blur(60px);
     position:absolute;
@@ -27,8 +27,32 @@ export default styled.div<{open:boolean}>`
         position:absolute;
         bottom:18px;
         left:18px;
-
     }
+    
+`
+
+export const MenuOpen = styled.div<{initial:boolean;open:boolean}>`
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:calc(100vh - 66px);
+    background: rgba(77, 76, 72, 0.8);
+    backdrop-filter: blur(60px);
+    z-index:10;
+    box-sizing:border-box;
+    padding:0 10vw;
+    padding-top:32px;
+    padding-bottom:95px;
+    display:flex;
+    flex-direction:column;
+
+   
+    ${({ initial, open }) => initial && !open && css`
+        opacity:0 !important;
+        pointer-events:none;
+        user-select:none;
+    `} 
 
     .menu_programs_container{
         display:flex;
@@ -36,22 +60,6 @@ export default styled.div<{open:boolean}>`
         transition:opacity 0.2s linear;
         padding-bottom:16px;
         overflow:auto;
+        align-items:baseline
     }
-   
-    ${({ open }) => !open && css`
-        .explication,.menu_programs_container{
-            opacity:0;
-            user-select:none;
-            padding:0;
-            pointer-events:none;
-        }
-
-    `} 
-    ${({ open }) => open && css`
-        padding:0 10vw;
-        padding-top:32px;
-        height:100vh;
-        padding-bottom:95px;
-
-    `}
 `
