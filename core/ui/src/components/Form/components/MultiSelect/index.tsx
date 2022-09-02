@@ -68,7 +68,7 @@ Group extends GroupBase<Option> = GroupBase<Option>
             cursor: 'pointer',
             height: '31px'
           }),
-          control: (props, { menuIsOpen }) => {
+          control: (props) => {
             return {
               ...props,
               cursor: 'pointer',

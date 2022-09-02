@@ -19,9 +19,8 @@ export default styled.button<{customType?:'green-confirm'|'orange-warning'|'dark
             case 'green-confirm':
                 return css`
                     background: linear-gradient(180deg, #00D56C 0%, #04BB61 100%);
-                    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.05), inset 0px 0px 2px 1px #F38B6B;
+                    box-shadow: none;
                     border: 1px solid #363632;
-
                 `
             case 'orange-warning':
                 return css`
