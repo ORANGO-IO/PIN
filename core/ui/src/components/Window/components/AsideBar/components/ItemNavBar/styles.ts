@@ -3,13 +3,22 @@ import styled, { css } from 'styled-components'
 export default styled.li<{ status: 'active' | 'disabled' | 'normal' }>`
   width: 100%;
   height: 40px;
-  display: flex;
-  align-items: center;
-  padding: 0 14px;
-  column-gap: 13px;
   box-sizing: border-box;
   cursor: pointer;
   font-family: "Ubuntu", sans-serif;
+  button{
+    width:100%;
+    height:100%;
+    background:none;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    column-gap: 13px;
+
+  }
 
   > div {
     display: flex;
