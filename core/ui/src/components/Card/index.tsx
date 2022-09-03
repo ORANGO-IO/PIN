@@ -1,31 +1,15 @@
-import React from 'react'
-import Badge from '@core/ui/src/components/Badge'
+import React, { ReactNode } from 'react'
 import Container from './styles'
 
 interface ICardProps {
-  subtitleTexts: { id: string; text: string }[];
-  title: string;
-  badges?: {
-    id: string;
-    text: string;
-    colorBackground?: string;
-    colorText?: string;
-  }[];
+  subtitleTexts: { id: string; text: string | ReactNode }[];
+  title: string | ReactNode;
 }
 
-const Card: React.FC<ICardProps> = ({ subtitleTexts, badges = [], title }) => (
+const Card: React.FC<ICardProps> = ({ subtitleTexts, title }) => (
   <Container>
     <p className="title">
       {title}
-      {badges.map((badge) => (
-        <Badge
-          key={badge.id}
-          background={badge.colorBackground}
-          colorText={badge.colorText}
-        >
-          {badge.text}
-        </Badge>
-      ))}
     </p>
     <div className="subtitle">
       {subtitleTexts.map((subtitle) => (

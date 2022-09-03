@@ -20,13 +20,15 @@ import Card from './components/Card'
 import Search from './components/Search'
 import ContainerWindow from './components/Window/components/ContainerWindow'
 import background from './assets/background.jpeg'
-import { Select } from './components/Form/components/Select'
+import Chart from './components/Window/components/Chart'
+import Badge from './components/Badge'
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false)
   const [userFilter, setUserFilter] = useState('')
   const [typeMenu, setTypeMenu] = useState('normal')
   const [cardFilter, setCardFilter] = useState(card)
+  const [usersMenu, setUsersMenu] = useState(false)
 
   useEffect(() => {
     const newCardFilter = card.filter((card) =>
@@ -105,6 +107,7 @@ const App: FC = () => {
                   <ItemNavBar
                     key={option.id}
                     status={option.status as any}
+                    onClick={() => setUsersMenu(!usersMenu)}
                     text={option.text}
                     element={
                       <svg
@@ -139,9 +142,15 @@ const App: FC = () => {
                   {cardFilter.map((card) => (
                     <Card
                       key={card.id}
-                      badges={card.badges}
                       subtitleTexts={card.subtitlesTexts}
-                      title={card.title}
+                      title={
+                      <>
+                      {card.title}
+                      <Badge>
+                        INTERNADO
+                      </Badge>
+                      </>
+                    }
                     />
                   ))}
                 </div>
@@ -154,7 +163,15 @@ const App: FC = () => {
                 justifyContent: 'center'
               }}
             >
-              <div
+              {
+                usersMenu
+                  ? <div style={{ height: '100%', width: '100%' }}>
+                    <Chart>
+                      <p>oi</p>
+                    </Chart>
+                  </div>
+
+                  : <div
                 style={{
                   display: 'flex',
                   background: '#fff',
@@ -167,7 +184,6 @@ const App: FC = () => {
                   flexDirection: 'column'
                 }}
               >
-              <Select options={[{ label: 'oi', value: 'oi' }, { label: 'oi', value: 'oi' }]}/>
                 {options.map((option) => (
                   <ListOption
                     key={option.id}
@@ -365,9 +381,11 @@ const App: FC = () => {
                   />
                 ))}
               </div>
+              }
             </Main>
           </Content>
         </ContainerWindow>
+      </div>
         <Menu
           programs={[
             {
@@ -411,7 +429,6 @@ const App: FC = () => {
             }
           ]}
         />
-      </div>
     </>
   )
 }
