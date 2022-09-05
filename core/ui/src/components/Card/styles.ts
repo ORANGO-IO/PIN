@@ -6,7 +6,6 @@ export default styled.div`
   box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.5);
   padding: 14px;
   width: 100%;
-  box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
 
   .title {

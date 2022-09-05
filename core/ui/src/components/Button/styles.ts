@@ -13,6 +13,7 @@ export default styled.button<{customType?:'green-confirm'|'orange-warning'|'dark
     box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;
     border-radius: 5px;
     cursor:pointer;
+    padding:0 8px;
   
     ${({ customType }) => {
         switch (customType) {

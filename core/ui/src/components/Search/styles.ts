@@ -18,7 +18,6 @@ export default styled.div`
         margin:0;
         height: 27px;
         font-family: 'Ubuntu', sans-serif;
-        box-sizing:border-box;
         background: linear-gradient(180deg, #E0E0E0 0%, #F3F3F3 100%);
         border: 1px solid #DB815D;
         box-shadow: 0px 0px 2px #DB815D, 0px 1px 0px rgba(255, 255, 255, 0.85), inset 0px 1px 0px 1px #FFFFFF;

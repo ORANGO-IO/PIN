@@ -23,6 +23,7 @@ import background from './assets/background.jpeg'
 import Chart from './components/Window/components/Chart'
 import Badge from './components/Badge'
 import profileIcon from './assets/icons/profile.svg'
+import GlobalSyles from './theme/globalSyles'
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -40,6 +41,7 @@ const App: FC = () => {
 
   return (
     <>
+    <GlobalSyles/>
       <img style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', objectFit: 'cover' }} src={background} alt="fundo"/>
       <div
         style={{

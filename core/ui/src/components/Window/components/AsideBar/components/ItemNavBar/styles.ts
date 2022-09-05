@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 export default styled.li<{ status: 'active' | 'disabled' | 'normal' }>`
   width: 100%;
   height: 40px;
-  box-sizing: border-box;
   cursor: pointer;
   font-family: "Ubuntu", sans-serif;
   button{

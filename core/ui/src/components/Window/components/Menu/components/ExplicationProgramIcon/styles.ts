@@ -6,7 +6,6 @@ export default styled.div<{show:boolean}>`
     border-radius: 16px;
     height: 230px;
     padding:21px;
-    box-sizing: border-box;
     opacity:0;
     transition:opacity 0.2s linear;
     ${({ show }) => show && css`

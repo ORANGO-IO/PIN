@@ -14,7 +14,6 @@ export default styled.div`
     bottom:0;
     z-index:5;
     left:0;
-    box-sizing:border-box;
     transition:height 0.5s linear;
     justify-content:space-between;
     
@@ -40,7 +39,6 @@ export const MenuOpen = styled.div<{open:boolean}>`
     background: rgba(77, 76, 72, 0.8);
     backdrop-filter: blur(60px);
     z-index:10;
-    box-sizing:border-box;
     padding:0 10vw;
     padding-top:32px;
     padding-bottom:95px;
