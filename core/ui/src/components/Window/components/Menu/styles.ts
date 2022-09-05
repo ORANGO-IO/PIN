@@ -31,7 +31,7 @@ export default styled.div`
     
 `
 
-export const MenuOpen = styled.div<{initial:boolean;open:boolean}>`
+export const MenuOpen = styled.div<{open:boolean}>`
     position:fixed;
     top:0;
     left:0;
@@ -45,10 +45,10 @@ export const MenuOpen = styled.div<{initial:boolean;open:boolean}>`
     padding-top:32px;
     padding-bottom:95px;
     display:flex;
+    transition: opacity 0.5s linear;
     flex-direction:column;
 
-   
-    ${({ initial, open }) => initial && !open && css`
+    ${({ open }) => !open && css`
         opacity:0 !important;
         pointer-events:none;
         user-select:none;
@@ -59,7 +59,8 @@ export const MenuOpen = styled.div<{initial:boolean;open:boolean}>`
         flex-wrap:wrap;
         transition:opacity 0.2s linear;
         padding-bottom:16px;
-        overflow:auto;
-        align-items:baseline
+        overflow:visible;
+        align-items:baseline;
+        flex:1;
     }
 `
