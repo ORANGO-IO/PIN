@@ -15,7 +15,6 @@ export default styled.div`
         width: 27px;
         cursor:pointer;
         padding:6px;
-        margin:0;
         height: 27px;
         font-family: 'Ubuntu', sans-serif;
         background: linear-gradient(180deg, #E0E0E0 0%, #F3F3F3 100%);

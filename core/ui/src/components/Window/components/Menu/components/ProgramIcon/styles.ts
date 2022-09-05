@@ -22,7 +22,6 @@ export default styled.div<{width:number | null; height: number | null; open:bool
             font-weight: 300;
             font-size: 10px;
             color: #fff;
-            margin:0;
             transition: opacity 0.2s linear;
             font-family: 'Ubuntu', sans-serif;
             overflow: hidden;

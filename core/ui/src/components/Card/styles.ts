@@ -23,7 +23,6 @@ export default styled.div`
     font-size: 10px;
     color: #3c3c3c;
     p {
-      margin: 0;
       font-family: "Ubuntu", sans-serif;
     }
   }

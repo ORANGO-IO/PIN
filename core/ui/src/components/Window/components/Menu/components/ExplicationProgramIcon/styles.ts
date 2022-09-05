@@ -14,7 +14,6 @@ export default styled.div<{show:boolean}>`
 
     h2{
         font-weight: 400;
-        margin:0;
         font-size: 24px;
         color: #FFFFFF;
         font-family: 'Ubuntu', sans-serif;

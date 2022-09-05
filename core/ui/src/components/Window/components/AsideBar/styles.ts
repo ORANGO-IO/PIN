@@ -7,8 +7,6 @@ export default styled.aside<{sizeType:'normal'|'small';open:boolean;width:number
     z-index:1;
     margin-left:0;
     ul{
-        margin:0;
-        padding:0;
         background:#fff;
         height:100%;
         z-index:2;
@@ -72,7 +70,6 @@ export const Modal = styled.button<{sizeType:'normal'|'small';open:boolean}>`
     position:absolute;
     width:100%;
     height:0;
-    padding:0;
     border:none;
     top:0;
     left:0;
