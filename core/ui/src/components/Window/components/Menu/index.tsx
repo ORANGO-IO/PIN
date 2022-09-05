@@ -3,7 +3,6 @@ import MenuButton from './components/Button'
 import ExplicationProgramIcon from './components/ExplicationProgramIcon'
 import ProgramIcon from './components/ProgramIcon'
 import Container, { MenuOpen } from './styles'
-import 'animate.css'
 /* global HTMLButtonElement */
 
 interface program{
