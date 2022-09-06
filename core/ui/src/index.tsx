@@ -27,6 +27,8 @@ import GlobalSyles from './theme/globalSyles'
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false)
+  const [openModalConfirm, setOpenModalConfirm] = useState(false)
+
   const [userFilter, setUserFilter] = useState('')
   const [typeMenu, setTypeMenu] = useState('normal')
   const [cardFilter, setCardFilter] = useState(card)
@@ -62,8 +64,13 @@ const App: FC = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Modal
+          headerTitle='Editar Usuário'
           open={openModal}
+          goBack={() => setOpenModal(false)}
+
         >
+          <form style={{ minHeight: '359px', width: '435px' }}>
+
           <div
             style={{
               padding: '14px 18px',
@@ -94,8 +101,12 @@ const App: FC = () => {
               padding: '14px 18px'
             }}
           >
-            <Button>Desabilitar Usuário</Button>
+            <Button onClick={() => setOpenModalConfirm(true)}>Desabilitar Usuário</Button>
           </div>
+          </form>
+        </Modal>
+        <Modal headerTitle='Alerta' open={openModalConfirm} goBack={() => setOpenModalConfirm(false)}>
+          <p style={{ maxWidth: '338px', margin: '21px 56px 17px 41px' }}>Tem certeza que deseja desabilitar esse usuário? Depois dessa ação ele não mais terá acesso ao sistema!</p>
         </Modal>
         <ContainerWindow style={{ height: '80vh' }}>
           <Header

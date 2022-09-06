@@ -12,11 +12,12 @@ interface IModalProps{
   children:React.ReactNode
   confirmButton?:React.MouseEventHandler<HTMLButtonElement>
   goBack?:React.MouseEventHandler<HTMLButtonElement>
+  headerTitle:string
 }
 
 const modalRoot = document.getElementById('modals')
 
-const Modal :React.FC<IModalProps> = ({ open, children, confirmButton, goBack }) => {
+const Modal :React.FC<IModalProps> = ({ open, children, confirmButton, goBack, headerTitle }) => {
   const rootElemRef = React.useRef(document.createElement('div'))
 
   useEffect(() => {
@@ -33,7 +34,6 @@ const Modal :React.FC<IModalProps> = ({ open, children, confirmButton, goBack })
           if (goBack) {
             goBack(e)
           }
-          rootElemRef.current.remove()
         }} className="button-modal"></button>
         <div>
         <div
@@ -41,13 +41,11 @@ const Modal :React.FC<IModalProps> = ({ open, children, confirmButton, goBack })
               display: 'flex',
               background: '#fff',
               flexDirection: 'column',
-              height: '40vh',
-              width: '435px',
               borderRadius: '5px'
             }}
           >
              <Header
-              title="Editar Usuário"
+              title={headerTitle}
               buttonLabel="Cancelar"
               rightComponent={
                 <Button
@@ -62,7 +60,6 @@ const Modal :React.FC<IModalProps> = ({ open, children, confirmButton, goBack })
                 if (goBack) {
                   goBack(e)
                 }
-                rootElemRef.current.remove()
               }}
             />
             <Content style={{ background: '#fff' }}>
