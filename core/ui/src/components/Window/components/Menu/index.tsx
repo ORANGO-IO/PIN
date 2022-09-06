@@ -7,11 +7,10 @@ import Container, { MenuOpen } from './styles'
 
 interface program{
   ProgramIcon: React.ReactNode,
-  programText: string;
+  programName: string;
   ExplicationProgramText:string;
   TitleExplication: string,
   ExplicationProgramIcon: React.ReactNode;
-  key:number;
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
@@ -28,7 +27,7 @@ const Menu:React.FC<IMenuProps> = ({ programs }) => {
   <MenuOpen open={open}>
     <div className="menu_programs_container ">
       {programs && programs.map(program => (
-        <ProgramIcon open={open} onClick={program.onClick} key={program.key} onMouseEnter={() => setFocusProgram(program)} icon={program.ProgramIcon} onMouseLeave={() => setFocusProgram(undefined)} text={program.programText} />
+        <ProgramIcon open={open} onClick={program.onClick} key={program.programName} onMouseEnter={() => setFocusProgram(program)} icon={program.ProgramIcon} onMouseLeave={() => setFocusProgram(undefined)} text={program.programName} />
       ))}
 
     </div>
