@@ -14,8 +14,8 @@ import ItemNavBar from './components/Window/components/AsideBar/components/ItemN
 import options from './mocks/options.json'
 import menu from './mocks/menu.json'
 import card from './mocks/card.json'
+import programs from './mocks/programs.json'
 import tool from './assets/icons/tool.svg'
-import loja from './assets/icons/store.svg'
 import Card from './components/Card'
 import Search from './components/Search'
 import ContainerWindow from './components/Window/components/ContainerWindow'
@@ -221,47 +221,17 @@ const App: FC = () => {
         </ContainerWindow>
       </div>
         <Menu
-          programs={[
-            {
-              key: 0,
-              ExplicationProgramIcon: (
-                <img
-                  src={tool}
-                  style={{ width: '100%', objectFit: 'contain' }}
-                />
-              ),
-              ProgramIcon: <img src={tool} />,
-              programText: 'o321312312312312312i',
-              TitleExplication: 'titulo',
-              ExplicationProgramText: 'Explicação'
-            },
-            {
-              key: 1,
-              ExplicationProgramIcon: (
-                <img
-                  src={loja}
-                  style={{ width: '100%', objectFit: 'contain' }}
-                />
-              ),
-              ProgramIcon: <img src={loja} />,
-              programText: 'oi2',
-              TitleExplication: 'titulo2',
-              ExplicationProgramText: 'Explicação2'
-            },
-            {
-              key: 2,
-              ExplicationProgramIcon: (
-                <img
-                  src={tool}
-                  style={{ width: '100%', objectFit: 'contain' }}
-                />
-              ),
-              ProgramIcon: <img src={tool} />,
-              programText: 'oi',
-              TitleExplication: 'titulo',
-              ExplicationProgramText: 'Explicação'
-            }
-          ]}
+          programs={programs.map(program => ({
+            ...program,
+            ExplicationProgramIcon: (
+              <img
+                src={tool}
+                style={{ width: '100%', objectFit: 'contain' }}
+              />
+            ),
+            ProgramIcon: <img src={tool} />
+          }))
+          }
         />
     </>
   )
