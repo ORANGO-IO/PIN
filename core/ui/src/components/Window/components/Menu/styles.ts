@@ -60,5 +60,7 @@ export const MenuOpen = styled.div<{open:boolean}>`
         overflow:visible;
         align-items:baseline;
         flex:1;
+        row-gap:16px;
+        align-content: flex-start;
     }
 `
