@@ -11,4 +11,12 @@ export default createGlobalStyle`
     #app{
         height:100vh;
     }
+
+    p{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: #8C8C8C;
+    }
 `

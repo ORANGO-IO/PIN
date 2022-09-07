@@ -101,7 +101,7 @@ const App: FC = () => {
               padding: '14px 18px'
             }}
           >
-            <Button onClick={() => setOpenModalConfirm(true)}>Desabilitar Usuário</Button>
+            <Button type="button" onClick={() => setOpenModalConfirm(true)}>Desabilitar Usuário</Button>
           </div>
           </form>
         </Modal>
@@ -112,6 +112,7 @@ const App: FC = () => {
           <Header
             title="Hospital Maternidade Luís Eduardo Magalhães - Recepção"
             buttonLabel="Sair"
+            disabled
           />
           <Content>
             <AsideBar>
