@@ -6,7 +6,7 @@ export default styled.div`
     width:100%;
     background: rgba(0, 0, 0, 0.1);
 
-    p{
+    p,pre{
         color:#000;
         font-size:15px;
         font-weight:400

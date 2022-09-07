@@ -11,10 +11,14 @@ import Modal from './components/Window/components/Modal'
 import Button from './components/Button'
 import Input from './components/Form/components/Input'
 import ItemNavBar from './components/Window/components/AsideBar/components/ItemNavBar'
+
+/* Mocks */
 import options from './mocks/options.json'
 import menu from './mocks/menu.json'
 import card from './mocks/card.json'
 import programs from './mocks/programs.json'
+import charts from './mocks/chart.json'
+
 import tool from './assets/icons/tool.svg'
 import Card from './components/Card'
 import Search from './components/Search'
@@ -181,9 +185,12 @@ const App: FC = () => {
               {
                 usersMenu
                   ? <div style={{ height: '100%', width: '100%' }}>
-                    <Chart>
-                      <p>oi</p>
+                    {charts.map(chart => (
+
+                    <Chart key={chart.id}>
+                      <pre>{chart.text}</pre>
                     </Chart>
+                    ))}
                   </div>
 
                   : <div
