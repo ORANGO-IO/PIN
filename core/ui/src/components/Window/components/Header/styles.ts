@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default styled.header`
-    height:41px;
+    min-height:41px;
     background: linear-gradient(180deg, #59574E 0%, #3C3B37 100%);
     border-top: 1px solid #626055;
     box-shadow: 0px -1px 0px #4F4E47;

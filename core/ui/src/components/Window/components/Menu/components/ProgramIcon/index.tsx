@@ -35,7 +35,6 @@ const ProgramIcon:React.FC<IProgramIconProp> = ({ icon, text, open, ...rest }) =
     if (!el) {
       return
     }
-    console.log('el', el)
     const distanceY = window.innerHeight - el?.top
     const distanceX = el.left + 10
     setDistances({

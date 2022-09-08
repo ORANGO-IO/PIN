@@ -12,7 +12,7 @@ export default createGlobalStyle`
         height:100vh;
         display: flex; 
         justify-content: center; 
-        align-items: end 
+        align-items: end ;
     }
 
     p{

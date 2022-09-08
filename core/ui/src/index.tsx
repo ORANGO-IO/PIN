@@ -100,6 +100,28 @@ const App: FC = () => {
             }}
           >
             <MultiSelect
+              options={[
+                { value: 'teste', label: 'teste' },
+                { value: 'teste2', label: 'teste2' },
+                { value: 'teste3', label: 'teste3' },
+                { value: 'teste5', label: 'teste5' },
+                { value: 'teste6', label: 'teste6' },
+                { value: 'teste7', label: 'teste7' },
+                { value: 'teste8', label: 'teste8' },
+                { value: 'teste9', label: 'teste9' },
+                { value: 'teste10', label: 'teste10' },
+                { value: 'teste11', label: 'teste11' },
+                { value: 'teste11', label: 'teste11' },
+
+                { value: 'teste12', label: 'teste12' },
+
+                { value: 'teste13', label: 'teste13' },
+
+                { value: 'teste14', label: 'teste14' },
+
+                { value: 'teste15', label: 'teste15' }
+
+              ]}
               labelOptions={{ style: { minWidth: '115px' } }}
               label="Permissões"
               labelPosition="Left"
@@ -135,7 +157,8 @@ const App: FC = () => {
         />
         <Content>
           <AsideBar>
-            {typeMenu === 'normal' && (<div style={{ overflow: 'auto', height: '100%' }}>
+            {typeMenu === 'normal' && (
+              <div style={{ overflow: 'auto', height: '100%' }}>
                 {menu.map((option) => (
                   <ItemNavBar
                     key={option.id}
@@ -160,9 +183,10 @@ const App: FC = () => {
                     }
                   />
                 ))}
-              </div>)}
+              </div>
+            )}
 
-              {typeMenu !== 'normal' &&
+            {typeMenu !== 'normal' && (
               <div style={{ height: '100%' }}>
                 <Search
                   inputProps={{
@@ -182,7 +206,8 @@ const App: FC = () => {
                     />
                   ))}
                 </div>
-              </div>}
+              </div>
+            )}
           </AsideBar>
           <Main
             style={{
@@ -194,21 +219,11 @@ const App: FC = () => {
             {usersMenu
               ? (
               <div style={{ height: '100%', width: '100%' }}>
-               <HeaderChart >
-                    <p>
-                    Filipe Rocha Lopes, Masculino. 56 anos
-
-                    </p>
-                    <p>
-
-                    Comorbidades: Hipertensão Arterial Sistêmica, Diabetes
-                    </p>
-                    <p>
-
-                    Alergias:
-
-                    </p>
-                  </HeaderChart>
+                <HeaderChart>
+                  <p>Filipe Rocha Lopes, Masculino. 56 anos</p>
+                  <p>Comorbidades: Hipertensão Arterial Sistêmica, Diabetes</p>
+                  <p>Alergias:</p>
+                </HeaderChart>
               </div>
                 )
               : (
