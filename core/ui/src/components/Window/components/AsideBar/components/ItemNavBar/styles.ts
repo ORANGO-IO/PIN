@@ -57,6 +57,15 @@ export default styled.li<{ status: 'active' | 'disabled' | 'normal' }>`
       case 'disabled':
         return css`
           background-color: #ffffff;
+          cursor: auto;
+
+          button{
+            cursor:auto;
+          }
+
+          :hover {
+            background-color: #fff;
+          }
           svg,
           svg path {
             fill: #c9c9c9;
