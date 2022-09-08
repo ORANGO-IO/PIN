@@ -11,7 +11,7 @@ interface IItemNavBarrops extends ButtonHTMLAttributes<HTMLButtonElement>{
 
 const ItemNavBar: React.FC<IItemNavBarrops> = ({ status, text, element, ...rest }) => (
   <Container status={status}>
-    <button type="button" {...rest}>
+    <button disabled={status === 'disabled'} type="button" {...rest}>
       <div>{element}</div>
       <p>{text}</p>
     </button>
