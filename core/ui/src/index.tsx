@@ -17,14 +17,13 @@ import options from './mocks/options.json'
 import menu from './mocks/menu.json'
 import card from './mocks/card.json'
 import programs from './mocks/programs.json'
-import charts from './mocks/chart.json'
 
 import tool from './assets/icons/tool.svg'
 import Card from './components/Card'
 import Search from './components/Search'
 import ContainerWindow from './components/Window/components/ContainerWindow'
 import background from './assets/background.jpeg'
-import Chart from './components/Window/components/Chart'
+import HeaderChart from './components/Window/components/HeaderChart'
 import Badge from './components/Badge'
 import profileIcon from './assets/icons/profile.svg'
 import GlobalSyles from './theme/globalSyles'
@@ -201,11 +200,21 @@ const App: FC = () => {
             {usersMenu
               ? (
               <div style={{ height: '100%', width: '100%' }}>
-                {charts.map((chart) => (
-                  <Chart key={chart.id}>
-                    <pre>{chart.text}</pre>
-                  </Chart>
-                ))}
+               <HeaderChart >
+                    <p>
+                    Filipe Rocha Lopes, Masculino. 56 anos
+
+                    </p>
+                    <p>
+
+                    Comorbidades: Hipertensão Arterial Sistêmica, Diabetes
+                    </p>
+                    <p>
+
+                    Alergias:
+
+                    </p>
+                  </HeaderChart>
               </div>
                 )
               : (

@@ -5,6 +5,7 @@ export default styled.div`
     padding:12px 41px;
     width:100%;
     background: rgba(0, 0, 0, 0.1);
+    flex-direction:column;
 
     p,pre{
         color:#000;

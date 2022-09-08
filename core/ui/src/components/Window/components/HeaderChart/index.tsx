@@ -1,14 +1,14 @@
 import React from 'react'
 import Container from './styles'
 
-interface IChartProps{
+interface IHeaderChartProps{
     children:React.ReactNode
 }
 
-const Chart:React.FC<IChartProps> = ({ children }) => (
+const HeaderChart:React.FC<IHeaderChartProps> = ({ children }) => (
     <Container>
         {children}
     </Container>
 )
 
-export default Chart
+export default HeaderChart
