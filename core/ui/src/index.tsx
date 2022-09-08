@@ -66,7 +66,6 @@ const App: FC = () => {
           Menu de rotas
         </button>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Modal
           headerTitle='Editar Usuário'
           open={openModal}
@@ -238,7 +237,6 @@ const App: FC = () => {
             </Main>
           </Content>
         </ContainerWindow>
-      </div>
         <Menu
           programs={programs.map(program => ({
             ...program,
