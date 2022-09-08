@@ -69,7 +69,8 @@ export const Select = <Option, IsMulti extends boolean = false, Group extends Gr
             ...props,
             width: '100%',
             border: 0,
-            padding: 0
+            padding: 0,
+            maxHeight: '320px'
 
           }),
           menu: props => ({
