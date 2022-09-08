@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import Container from './styles'
 
 interface ICardProps {
-  subtitleTexts: { id: string; text: string | ReactNode }[];
+  subtitleTexts: string | ReactNode ;
   title: string | ReactNode;
 }
 
@@ -12,9 +12,8 @@ const Card: React.FC<ICardProps> = ({ subtitleTexts, title }) => (
       {title}
     </p>
     <div className="subtitle">
-      {subtitleTexts.map((subtitle) => (
-        <p key={subtitle.id}>{subtitle.text}</p>
-      ))}
+      {typeof subtitleTexts === 'string' && <p>{subtitleTexts}</p>}
+      {subtitleTexts && typeof subtitleTexts !== 'string' && subtitleTexts}
     </div>
   </Container>
 )

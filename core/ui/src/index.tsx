@@ -15,7 +15,7 @@ import ItemNavBar from './components/Window/components/AsideBar/components/ItemN
 /* Mocks */
 import options from './mocks/options.json'
 import menu from './mocks/menu.json'
-import card from './mocks/card.json'
+import card from './mocks/card'
 import programs from './mocks/programs.json'
 
 import tool from './assets/icons/tool.svg'
@@ -24,7 +24,6 @@ import Search from './components/Search'
 import ContainerWindow from './components/Window/components/ContainerWindow'
 import background from './assets/background.jpeg'
 import HeaderChart from './components/Window/components/HeaderChart'
-import Badge from './components/Badge'
 import profileIcon from './assets/icons/profile.svg'
 import GlobalSyles from './theme/globalSyles'
 
@@ -39,7 +38,7 @@ const App: FC = () => {
 
   useEffect(() => {
     const newCardFilter = card.filter((card) =>
-      card.title.includes(userFilter)
+      card.label.includes(userFilter)
     )
     setCardFilter(newCardFilter)
   }, [userFilter])
@@ -178,13 +177,8 @@ const App: FC = () => {
                   {cardFilter.map((card) => (
                     <Card
                       key={card.id}
-                      subtitleTexts={card.subtitlesTexts}
-                      title={
-                        <>
-                          {card.title}
-                          <Badge>INTERNADO</Badge>
-                        </>
-                      }
+                      subtitleTexts={card.content}
+                      title={card.title}
                     />
                   ))}
                 </div>
