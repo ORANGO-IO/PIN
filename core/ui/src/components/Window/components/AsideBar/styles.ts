@@ -18,7 +18,6 @@ export default styled.aside<{sizeType:'normal'|'small';open:boolean;width:number
         align-self:stretch;
     }
     nav{
-        overflow:auto;
         display:flex;
         height:100%;
 

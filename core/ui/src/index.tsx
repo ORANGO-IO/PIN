@@ -47,8 +47,19 @@ const App: FC = () => {
 
   return (
     <>
-    <GlobalSyles/>
-      <img style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', objectFit: 'cover' }} src={background} alt="fundo"/>
+      <GlobalSyles />
+      <img
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          objectFit: 'cover'
+        }}
+        src={background}
+        alt="fundo"
+      />
       <div
         style={{
           position: 'fixed',
@@ -66,14 +77,12 @@ const App: FC = () => {
           Menu de rotas
         </button>
       </div>
-        <Modal
-          headerTitle='Editar Usuário'
-          open={openModal}
-          goBack={() => setOpenModal(false)}
-
-        >
-          <form style={{ minHeight: '359px', width: '435px' }}>
-
+      <Modal
+        headerTitle="Editar Usuário"
+        open={openModal}
+        goBack={() => setOpenModal(false)}
+      >
+        <form style={{ minHeight: '359px', width: '435px' }}>
           <div
             style={{
               padding: '14px 18px',
@@ -104,24 +113,32 @@ const App: FC = () => {
               padding: '14px 18px'
             }}
           >
-            <Button type="button" onClick={() => setOpenModalConfirm(true)}>Desabilitar Usuário</Button>
+            <Button type="button" onClick={() => setOpenModalConfirm(true)}>
+              Desabilitar Usuário
+            </Button>
           </div>
-          </form>
-        </Modal>
-        <Modal headerTitle='Alerta' open={openModalConfirm} goBack={() => setOpenModalConfirm(false)}>
-          <p style={{ maxWidth: '338px', margin: '21px 56px 17px 41px' }}>Tem certeza que deseja desabilitar esse usuário? Depois dessa ação ele não mais terá acesso ao sistema!</p>
-        </Modal>
-        <ContainerWindow style={{ height: '80vh' }}>
-          <Header
-            title="Hospital Maternidade Luís Eduardo Magalhães - Recepção"
-            buttonLabel="Sair"
-            disabled
-          />
-          <Content>
-            <AsideBar>
-              {typeMenu === 'normal'
-                ? (
-                    menu.map((option) => (
+        </form>
+      </Modal>
+      <Modal
+        headerTitle="Alerta"
+        open={openModalConfirm}
+        goBack={() => setOpenModalConfirm(false)}
+      >
+        <p style={{ maxWidth: '338px', margin: '21px 56px 17px 41px' }}>
+          Tem certeza que deseja desabilitar esse usuário? Depois dessa ação ele
+          não mais terá acesso ao sistema!
+        </p>
+      </Modal>
+      <ContainerWindow style={{ height: '80vh' }}>
+        <Header
+          title="Hospital Maternidade Luís Eduardo Magalhães - Recepção"
+          buttonLabel="Sair"
+          disabled
+        />
+        <Content>
+          <AsideBar>
+            {typeMenu === 'normal' && (<div style={{ overflow: 'auto', height: '100%' }}>
+                {menu.map((option) => (
                   <ItemNavBar
                     key={option.id}
                     status={option.status as any}
@@ -144,55 +161,55 @@ const App: FC = () => {
                       </svg>
                     }
                   />
-                    ))
-                  )
-                : (
-                <div>
-                  <Search
-                    inputProps={{
-                      value: userFilter,
-                      onChange: (e) => setUserFilter(e.target.value)
-                    }}
-                    containerProps={{
-                      style: { padding: '16px', boxSizing: 'border-box' }
-                    }}
-                  />
+                ))}
+              </div>)}
+
+              {typeMenu !== 'normal' &&
+              <div style={{ height: '100%' }}>
+                <Search
+                  inputProps={{
+                    value: userFilter,
+                    onChange: (e) => setUserFilter(e.target.value)
+                  }}
+                  containerProps={{
+                    style: { padding: '16px', boxSizing: 'border-box' }
+                  }}
+                />
+                <div style={{ height: '100%', overflow: 'auto' }}>
                   {cardFilter.map((card) => (
                     <Card
                       key={card.id}
                       subtitleTexts={card.subtitlesTexts}
                       title={
-                      <>
-                      {card.title}
-                      <Badge>
-                        INTERNADO
-                      </Badge>
-                      </>
-                    }
+                        <>
+                          {card.title}
+                          <Badge>INTERNADO</Badge>
+                        </>
+                      }
                     />
                   ))}
                 </div>
-                  )}
-            </AsideBar>
-            <Main
-              style={{
-                alignItems: 'center',
-                display: 'flex',
-                justifyContent: 'center'
-              }}
-            >
-              {
-                usersMenu
-                  ? <div style={{ height: '100%', width: '100%' }}>
-                    {charts.map(chart => (
-
-                    <Chart key={chart.id}>
-                      <pre>{chart.text}</pre>
-                    </Chart>
-                    ))}
-                  </div>
-
-                  : <div
+              </div>}
+          </AsideBar>
+          <Main
+            style={{
+              alignItems: 'center',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            {usersMenu
+              ? (
+              <div style={{ height: '100%', width: '100%' }}>
+                {charts.map((chart) => (
+                  <Chart key={chart.id}>
+                    <pre>{chart.text}</pre>
+                  </Chart>
+                ))}
+              </div>
+                )
+              : (
+              <div
                 style={{
                   display: 'flex',
                   background: '#fff',
@@ -226,30 +243,26 @@ const App: FC = () => {
                       </svg>
                     }
                     text={option.text}
-                    element={<img src={profileIcon} alt=""/>}
+                    element={<img src={profileIcon} alt="" />}
                     buttonOptions={{
                       onClick: () => setOpenModal(true)
                     }}
                   />
                 ))}
               </div>
-              }
-            </Main>
-          </Content>
-        </ContainerWindow>
-        <Menu
-          programs={programs.map(program => ({
-            ...program,
-            ExplicationProgramIcon: (
-              <img
-                src={tool}
-                style={{ width: '100%', objectFit: 'contain' }}
-              />
-            ),
-            ProgramIcon: <img src={tool} />
-          }))
-          }
-        />
+                )}
+          </Main>
+        </Content>
+      </ContainerWindow>
+      <Menu
+        programs={programs.map((program) => ({
+          ...program,
+          ExplicationProgramIcon: (
+            <img src={tool} style={{ width: '100%', objectFit: 'contain' }} />
+          ),
+          ProgramIcon: <img src={tool} />
+        }))}
+      />
     </>
   )
 }
