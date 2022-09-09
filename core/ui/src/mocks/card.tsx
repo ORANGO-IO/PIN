@@ -11,6 +11,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -27,6 +28,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -43,6 +45,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -59,6 +62,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -75,6 +79,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -91,6 +96,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -107,6 +113,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -123,6 +130,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -139,6 +147,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -155,6 +164,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -171,6 +181,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -187,6 +198,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -203,6 +215,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -219,6 +232,7 @@ export default [
       </>
     ),
     label: '',
+    contentLabel: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>

@@ -36,8 +36,10 @@ const App: FC = () => {
   const [cardFilter, setCardFilter] = useState(card);
 
   useEffect(() => {
-    const newCardFilter = card.filter((card) =>
-      card.label.includes(userFilter)
+    const newCardFilter = card.filter(
+      (card) =>
+        card.label.includes(userFilter) ||
+        card.contentLabel?.includes(userFilter)
     );
     setCardFilter(newCardFilter);
   }, [userFilter]);
