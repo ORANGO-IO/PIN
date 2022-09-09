@@ -1,47 +1,46 @@
-import { createRoot } from 'react-dom/client'
-import React, { FC, useEffect, useState } from 'react'
-import Header from './components/Window/components/Header'
-import AsideBar from './components/Window/components/AsideBar'
-import Main from './components/Window/components/Main'
-import Menu from './components/Window/components/Menu'
-import { MultiSelect } from './components/Form/components/MultiSelect'
-import Content from './components/Window/components/Content'
-import ListOption from './components/ListOption'
-import Modal from './components/Window/components/Modal'
-import Button from './components/Button'
-import Input from './components/Form/components/Input'
-import ItemNavBar from './components/Window/components/AsideBar/components/ItemNavBar'
+import { createRoot } from 'react-dom/client';
+import React, { FC, useEffect, useState } from 'react';
+import Header from './components/Window/components/Header';
+import AsideBar from './components/Window/components/AsideBar';
+import Main from './components/Window/components/Main';
+import Menu from './components/Window/components/Menu';
+import { MultiSelect } from './components/Form/components/MultiSelect';
+import Content from './components/Window/components/Content';
+import ListOption from './components/ListOption';
+import Modal from './components/Window/components/Modal';
+import Button from './components/Button';
+import Input from './components/Form/components/Input';
+import ItemNavBar from './components/Window/components/AsideBar/components/ItemNavBar';
 
 /* Mocks */
-import options from './mocks/options.json'
-import menu from './mocks/menu.json'
-import card from './mocks/card'
-import programs from './mocks/programs.json'
+import options from './mocks/options.json';
+import menu from './mocks/menu.json';
+import card from './mocks/card';
+import programs from './mocks/programs.json';
 
-import tool from './assets/icons/tool.svg'
-import Card from './components/Card'
-import Search from './components/Search'
-import ContainerWindow from './components/Window/components/ContainerWindow'
-import background from './assets/background.jpeg'
-import HeaderChart from './components/Window/components/HeaderChart'
-import profileIcon from './assets/icons/profile.svg'
-import GlobalSyles from './theme/globalSyles'
+import tool from './assets/icons/tool.svg';
+import Card from './components/Card';
+import Search from './components/Search';
+import ContainerWindow from './components/Window/components/ContainerWindow';
+import background from './assets/background.jpeg';
+import HeaderChart from './components/Window/components/HeaderChart';
+import profileIcon from './assets/icons/profile.svg';
+import GlobalSyles from './theme/globalSyles';
 
 const App: FC = () => {
-  const [openModal, setOpenModal] = useState(false)
-  const [openModalConfirm, setOpenModalConfirm] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
+  const [openModalConfirm, setOpenModalConfirm] = useState(false);
 
-  const [userFilter, setUserFilter] = useState('')
-  const [typeMenu, setTypeMenu] = useState('normal')
-  const [cardFilter, setCardFilter] = useState(card)
-  const [usersMenu, setUsersMenu] = useState(false)
+  const [userFilter, setUserFilter] = useState('');
+  const [typeMenu, setTypeMenu] = useState('normal');
+  const [cardFilter, setCardFilter] = useState(card);
 
   useEffect(() => {
     const newCardFilter = card.filter((card) =>
       card.label.includes(userFilter)
-    )
-    setCardFilter(newCardFilter)
-  }, [userFilter])
+    );
+    setCardFilter(newCardFilter);
+  }, [userFilter]);
 
   return (
     <>
@@ -53,7 +52,7 @@ const App: FC = () => {
           left: 0,
           width: '100vw',
           height: '100vh',
-          objectFit: 'cover'
+          objectFit: 'cover',
         }}
         src={background}
         alt="fundo"
@@ -64,7 +63,7 @@ const App: FC = () => {
           top: '16px',
           right: '16px',
           zIndex: 10,
-          background: '#fff'
+          background: '#fff',
         }}
       >
         <h4>Tipo de menu</h4>
@@ -84,7 +83,7 @@ const App: FC = () => {
           <div
             style={{
               padding: '14px 18px',
-              borderBottom: '1px solid #D5CFC7'
+              borderBottom: '1px solid #D5CFC7',
             }}
           >
             <Input
@@ -96,7 +95,7 @@ const App: FC = () => {
           <div
             style={{
               padding: '14px 18px',
-              borderBottom: '1px solid #D5CFC7'
+              borderBottom: '1px solid #D5CFC7',
             }}
           >
             <MultiSelect
@@ -119,8 +118,7 @@ const App: FC = () => {
 
                 { value: 'teste14', label: 'teste14' },
 
-                { value: 'teste15', label: 'teste15' }
-
+                { value: 'teste15', label: 'teste15' },
               ]}
               labelOptions={{ style: { minWidth: '115px' } }}
               label="Permissões"
@@ -130,7 +128,7 @@ const App: FC = () => {
           <div
             style={{
               borderBottom: '1px solid #D5CFC7',
-              padding: '14px 18px'
+              padding: '14px 18px',
             }}
           >
             <Button type="button" onClick={() => setOpenModalConfirm(true)}>
@@ -163,7 +161,6 @@ const App: FC = () => {
                   <ItemNavBar
                     key={option.id}
                     status={option.status as any}
-                    onClick={() => setUsersMenu(!usersMenu)}
                     text={option.text}
                     element={
                       <svg
@@ -191,10 +188,10 @@ const App: FC = () => {
                 <Search
                   inputProps={{
                     value: userFilter,
-                    onChange: (e) => setUserFilter(e.target.value)
+                    onChange: (e) => setUserFilter(e.target.value),
                   }}
                   containerProps={{
-                    style: { padding: '16px', boxSizing: 'border-box' }
+                    style: { padding: '16px', boxSizing: 'border-box' },
                   }}
                 />
                 <div style={{ height: '100%', overflow: 'auto' }}>
@@ -209,24 +206,14 @@ const App: FC = () => {
               </div>
             )}
           </AsideBar>
-          <Main
-            style={{
-              alignItems: 'center',
-              display: 'flex',
-              justifyContent: 'center'
-            }}
-          >
-            {usersMenu
-              ? (
-              <div style={{ height: '100%', width: '100%' }}>
-                <HeaderChart>
-                  <p>Filipe Rocha Lopes, Masculino. 56 anos</p>
-                  <p>Comorbidades: Hipertensão Arterial Sistêmica, Diabetes</p>
-                  <p>Alergias:</p>
-                </HeaderChart>
-              </div>
-                )
-              : (
+          <Main>
+            <HeaderChart>
+              <p>Filipe Rocha Lopes, Masculino. 56 anos</p>
+              <p>Comorbidades: Hipertensão Arterial Sistêmica, Diabetes</p>
+              <p>Alergias:</p>
+            </HeaderChart>
+            <div>
+              <Input style={{ maxWidth: '106px' }} label="Label" />
               <div
                 style={{
                   display: 'flex',
@@ -237,9 +224,10 @@ const App: FC = () => {
                   boxSizing: 'border-box',
                   maxHeight: '292px',
                   border: '1px solid #C9C6C3',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
                 }}
               >
+                <div style={{ height: '100%', width: '100%' }}></div>
                 {options.map((option) => (
                   <ListOption
                     key={option.id}
@@ -263,12 +251,12 @@ const App: FC = () => {
                     text={option.text}
                     element={<img src={profileIcon} alt="" />}
                     buttonOptions={{
-                      onClick: () => setOpenModal(true)
+                      onClick: () => setOpenModal(true),
                     }}
                   />
                 ))}
               </div>
-                )}
+            </div>
           </Main>
         </Content>
       </ContainerWindow>
@@ -278,13 +266,13 @@ const App: FC = () => {
           ExplicationProgramIcon: (
             <img src={tool} style={{ width: '100%', objectFit: 'contain' }} />
           ),
-          ProgramIcon: <img src={tool} />
+          ProgramIcon: <img src={tool} />,
         }))}
       />
     </>
-  )
-}
+  );
+};
 
-const container = document.getElementById('app')
-const root = createRoot(container!)
-root.render(<App />)
+const container = document.getElementById('app');
+const root = createRoot(container!);
+root.render(<App />);

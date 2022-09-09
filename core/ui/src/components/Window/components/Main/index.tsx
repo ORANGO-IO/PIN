@@ -1,5 +1,5 @@
-import React, { HTMLAttributes } from 'react'
-import Container from './styles'
+import React, { HTMLAttributes } from 'react';
+import Container from './styles';
 /* global HTMLElement */
 interface IMainProps extends HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
@@ -7,6 +7,6 @@ interface IMainProps extends HTMLAttributes<HTMLElement> {
 
 const Main: React.FC<IMainProps> = ({ children, ...rest }) => (
   <Container {...rest}>{children}</Container>
-)
+);
 
-export default Main
+export default Main;
