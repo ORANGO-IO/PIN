@@ -1,6 +1,6 @@
-import React from 'react'
-import Button from '@core/ui/src/components/Button'
-import Container from './styles'
+import React from 'react';
+import Button from '@core/ui/src/components/Button';
+import Container from './styles';
 /* global HTMLButtonElement */
 
 interface IHeaderProps {
@@ -8,9 +8,8 @@ interface IHeaderProps {
   buttonClick?: React.MouseEventHandler<HTMLButtonElement>;
   buttonDisabled?: boolean;
   rightComponent?: React.ReactNode;
-  buttonLabel?:string;
-  disabled?:boolean
-
+  buttonLabel?: string;
+  disabled?: boolean;
 }
 
 const Header: React.FC<IHeaderProps> = ({
@@ -19,11 +18,17 @@ const Header: React.FC<IHeaderProps> = ({
   buttonClick,
   rightComponent,
   buttonLabel,
-  disabled
+  disabled,
 }) => (
   <Container>
-    <div className='button_header_container'>
-      <Button style={{ width: '31px', height: '31px' }} customType={disabled ? 'dark' : 'orange-warning'} type="button" disabled={buttonDisabled} onClick={buttonClick}>
+    <div className="button_header_container">
+      <Button
+        style={{ width: '31px', height: '31px' }}
+        customType={disabled ? 'dark' : 'orange-warning'}
+        type="button"
+        disabled={buttonDisabled}
+        onClick={buttonClick}
+      >
         <svg
           width="8"
           height="13"
@@ -45,6 +50,6 @@ const Header: React.FC<IHeaderProps> = ({
     <p>{title}</p>
     <div>{rightComponent}</div>
   </Container>
-)
+);
 
-export default Header
+export default Header;

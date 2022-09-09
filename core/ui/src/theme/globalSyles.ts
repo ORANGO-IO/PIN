@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
     *{
@@ -22,4 +22,15 @@ export default createGlobalStyle`
         font-size: 14px;
         color: #8C8C8C;
     }
-`
+
+    h2{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 17px;
+
+        color: #4C4F4F;
+
+    }
+`;

@@ -1,1 +1,1 @@
-export const variableToTestImport: String = 'import'
+export const variableToTestImport: String = 'import';

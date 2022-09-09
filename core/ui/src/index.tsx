@@ -212,8 +212,64 @@ const App: FC = () => {
               <p>Comorbidades: Hipertensão Arterial Sistêmica, Diabetes</p>
               <p>Alergias:</p>
             </HeaderChart>
-            <div>
-              <Input style={{ maxWidth: '106px' }} label="Label" />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                flex: 1,
+                paddingTop: '60px',
+              }}
+            >
+              <div
+                style={{
+                  maxWidth: '447px',
+                  width: '100%',
+                }}
+              >
+                <Input style={{ maxWidth: '106px' }} label="Label" />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  maxWidth: '447px',
+                  rowGap: '32px',
+                  marginBottom: '12px',
+                }}
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a
+                  urna vel ex tempus blandit. Curabitur rutrum diam arcu, vel
+                  euismod magna tincidunt ac. Vestibulum posuere augue eget
+                  lorem porttitor pretium. Nullam pharetra orci a tortor gravida
+                  sollicitudin. In molestie tristique massa, non imperdiet nibh.
+                  Nunc vel tristique lectus. Integer sit amet libero quam.
+                </p>
+                <p>
+                  Nunc vestibulum pretium nisl, a mattis leo mattis eu. Nullam
+                  porttitor pulvinar ex et rhoncus. Morbi rutrum vehicula nibh,
+                  ac porta augue gravida sed. Vestibulum semper hendrerit nunc
+                  at vehicula. Etiam eros ex, tincidunt in varius in, tristique
+                  nec velit. Aenean et ipsum vitae justo mattis elementum vitae
+                  at dui. Curabitur lobortis tincidunt nulla eget consectetur.
+                  Nullam cursus iaculis lorem, at interdum nisl blandit at.
+                </p>
+              </div>
+              <div
+                style={{
+                  maxWidth: '447px',
+                  width: '100%',
+                }}
+              >
+                <Input
+                  style={{ maxWidth: '106px', marginBottom: '23px' }}
+                  labelPosition="Top"
+                  placeholder="Placeholder"
+                  label="Label"
+                />
+                <h2>Lista de Usuários</h2>
+              </div>
               <div
                 style={{
                   display: 'flex',
@@ -227,7 +283,6 @@ const App: FC = () => {
                   flexDirection: 'column',
                 }}
               >
-                <div style={{ height: '100%', width: '100%' }}></div>
                 {options.map((option) => (
                   <ListOption
                     key={option.id}

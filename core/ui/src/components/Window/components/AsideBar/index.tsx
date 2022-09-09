@@ -1,7 +1,7 @@
-import useDimension from '@core/ui/src/services/hooks/useDimension'
-import React, { useEffect, useRef, useState } from 'react'
-import Container, { ButtonStyle, ButtonContainer, Modal } from './styles'
-import Button from '@core/ui/src/components/Button'
+import useDimension from '@core/ui/src/services/hooks/useDimension';
+import React, { useEffect, useRef, useState } from 'react';
+import Container, { ButtonStyle, ButtonContainer, Modal } from './styles';
+import Button from '@core/ui/src/components/Button';
 /* global HTMLButtonElement */
 /* global HTMLElement */
 
@@ -10,23 +10,23 @@ interface IAsideBarProps {
 }
 
 const AsideBar: React.FC<IAsideBarProps> = ({ children }) => {
-  const ref = useRef<HTMLButtonElement>(null)
-  const refAside = useRef<HTMLElement>(null)
-  const { width: widthAside } = useDimension(refAside)
-  const { width } = useDimension(ref)
-  const [sizeType, setSizeType] = useState<'normal' | 'small'>('normal')
-  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLButtonElement>(null);
+  const refAside = useRef<HTMLElement>(null);
+  const { width: widthAside } = useDimension(refAside);
+  const { width } = useDimension(ref);
+  const [sizeType, setSizeType] = useState<'normal' | 'small'>('normal');
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    let newSizeType: 'normal' | 'small' = 'normal'
-    console.log('width', width)
+    let newSizeType: 'normal' | 'small' = 'normal';
+    console.log('width', width);
     if (width <= 600) {
-      newSizeType = 'small'
-      setOpen(false)
+      newSizeType = 'small';
+      setOpen(false);
     }
 
-    setSizeType(newSizeType)
-  }, [width])
+    setSizeType(newSizeType);
+  }, [width]);
 
   return (
     <>
@@ -37,16 +37,16 @@ const AsideBar: React.FC<IAsideBarProps> = ({ children }) => {
         open={open}
       >
         <nav>
-                <ul>{children}</ul>
+          <ul>{children}</ul>
         </nav>
       </Container>
       <Modal
-          ref={ref}
-          className="modal"
-          sizeType={sizeType}
-          open={open}
-          onClick={() => setOpen(false)}
-        ></Modal>
+        ref={ref}
+        className="modal"
+        sizeType={sizeType}
+        open={open}
+        onClick={() => setOpen(false)}
+      ></Modal>
       {!open && sizeType === 'small' && (
         <>
           <ButtonContainer></ButtonContainer>
@@ -63,7 +63,7 @@ const AsideBar: React.FC<IAsideBarProps> = ({ children }) => {
         </>
       )}
     </>
-  )
-}
+  );
+};
 
-export default AsideBar
+export default AsideBar;

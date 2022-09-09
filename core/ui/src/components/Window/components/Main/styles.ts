@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export default styled.div`
-    width:100%;
-    height:100%;
-    background: #F2F1F0;
-    display:flex;
-    flex-direction:column
-`
+  width: 100%;
+  height: 100%;
+  background: #f2f1f0;
+  display: flex;
+  flex-direction: column;
+`;
