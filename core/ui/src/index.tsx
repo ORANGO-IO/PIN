@@ -207,7 +207,7 @@ const App: FC = () => {
             )}
           </AsideBar>
           <Main>
-            <HeaderChart>
+            <HeaderChart fixed>
               <p>Filipe Rocha Lopes, Masculino. 56 anos</p>
               <p>Comorbidades: Hipertensão Arterial Sistêmica, Diabetes</p>
               <p>Alergias:</p>

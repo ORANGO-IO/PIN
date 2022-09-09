@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export default styled.div`
+export default styled.div<{ fixed?: boolean }>`
   display: flex;
   padding: 12px 41px;
   width: 100%;
@@ -13,4 +13,11 @@ export default styled.div`
     font-size: 15px;
     font-weight: 400;
   }
+
+  ${({ fixed }) =>
+    fixed &&
+    css`
+      position: sticky;
+      top: 0;
+    `}
 `;
