@@ -5,4 +5,5 @@ export default styled.div`
   max-width: 1024px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 66px;
 `;
