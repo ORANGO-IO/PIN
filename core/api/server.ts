@@ -1,8 +1,8 @@
-import { ApolloServer, gql } from 'apollo-server'
+import { ApolloServer, gql } from 'apollo-server';
 import {
   ApolloServerPluginLandingPageGraphQLPlayground,
-  ApolloServerPluginLandingPageDisabled
-} from 'apollo-server-core'
+  ApolloServerPluginLandingPageDisabled,
+} from 'apollo-server-core';
 
 const typeDefs = gql`
   type Query {
@@ -24,7 +24,7 @@ const typeDefs = gql`
     author: Person!
     authorId: Int!
   }
-`
+`;
 
 const resolvers = {
   Query: {
@@ -37,12 +37,12 @@ const resolvers = {
         author: {
           id: 1,
           email: 'contatofilipelopes.med.br',
-          name: 'Filipe Lopes'
-        }
-      }
-    ]
-  }
-}
+          name: 'Filipe Lopes',
+        },
+      },
+    ],
+  },
+};
 
 const server = new ApolloServer({
   typeDefs,
@@ -50,10 +50,10 @@ const server = new ApolloServer({
   plugins: [
     process.env.NODE_ENV === 'production'
       ? ApolloServerPluginLandingPageDisabled()
-      : ApolloServerPluginLandingPageGraphQLPlayground()
-  ]
-})
+      : ApolloServerPluginLandingPageGraphQLPlayground(),
+  ],
+});
 
 server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`)
-})
+  console.log(`🚀  Server ready at ${url}`);
+});

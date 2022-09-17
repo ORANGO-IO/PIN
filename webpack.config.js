@@ -25,6 +25,25 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader']
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
       }
     ]
   },
@@ -36,6 +55,6 @@ module.exports = {
     new MiniCssExtractPlugin()
   ],
   resolve: {
-    plugins: [ new TsconfigPathsPlugin()]
+    plugins: [new TsconfigPathsPlugin()]
   }
 }
