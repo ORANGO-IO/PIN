@@ -61,6 +61,9 @@ export default styled.button<{
 
   :hover {
     border: 1px solid #db815d;
+    box-shadow: 0px 0px 2px #db815d, 0px 1px 0px rgba(255, 255, 255, 0.85),
+      inset 0px 1px 0px 1px #ffffff;
+    background: linear-gradient(180deg, #e0e0e0 0%, #f3f3f3 100%);
   }
 
   :active {
