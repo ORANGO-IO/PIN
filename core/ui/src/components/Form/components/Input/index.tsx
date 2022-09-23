@@ -3,19 +3,23 @@ import Container from './styles';
 /* global HTMLInputElement */
 /* global HTMLLabelElement */
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  labelPosition?: 'Top' | 'Bottom' | 'Left' | 'Right';
+  labelPosition?: 'top' | 'bottom' | 'left' | 'right';
   label?: string;
   labelOptions?: LabelHTMLAttributes<HTMLLabelElement>;
 }
 
 const Input: React.FC<IInputProps> = ({
-  labelPosition,
+  labelPosition = 'left',
   label,
   labelOptions,
   ...rest
 }) => (
   <Container labelPosition={labelPosition}>
-    {label && <label {...labelOptions}>{label}</label>}
+    {label && (
+      <label htmlFor={rest.id} {...labelOptions}>
+        {label}
+      </label>
+    )}
     <input {...rest} />
   </Container>
 );

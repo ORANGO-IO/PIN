@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export default styled.div<{
-  labelPosition?: 'Top' | 'Bottom' | 'Left' | 'Right';
+  labelPosition?: 'top' | 'bottom' | 'left' | 'right';
 }>`
   display: flex;
   width: 100%;
@@ -38,22 +38,26 @@ export default styled.div<{
 
   ${({ labelPosition }) => {
     switch (labelPosition) {
-      case 'Bottom':
+      case 'bottom':
         return css`
           flex-direction: column-reverse;
         `;
-      case 'Top':
+      case 'top':
         return css`
           flex-direction: column;
         `;
-      case 'Right':
+      case 'right':
         return css`
           flex-direction: row-reverse;
         `;
-      case 'Left':
+      case 'left':
         return css`
           align-items: center;
-        `;
+          label{
+          margin-right: 6px;
+
+          }
+l        `;
       default:
     }
   }}
