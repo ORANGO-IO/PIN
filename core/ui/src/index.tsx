@@ -91,7 +91,7 @@ const App: FC = () => {
             <Input
               labelOptions={{ style: { minWidth: '115px' } }}
               label="Nome Completo"
-              labelPosition="Left"
+              labelPosition="left"
             />
           </div>
           <div
@@ -227,6 +227,7 @@ const App: FC = () => {
                 style={{
                   maxWidth: '447px',
                   width: '100%',
+                  marginBottom: '30px',
                 }}
               >
                 <Input style={{ maxWidth: '106px' }} label="Label" />
@@ -266,9 +267,10 @@ const App: FC = () => {
               >
                 <Input
                   style={{ maxWidth: '106px', marginBottom: '23px' }}
-                  labelPosition="Top"
+                  labelPosition="top"
                   placeholder="Placeholder"
                   label="Label"
+                  id="placeholder"
                 />
                 <h2>Lista de Usuários</h2>
               </div>
@@ -279,6 +281,7 @@ const App: FC = () => {
                   width: '100%',
                   maxWidth: '447px',
                   height: '100%',
+                  minHeight: '500px',
                   boxSizing: 'border-box',
                   maxHeight: '292px',
                   border: '1px solid #C9C6C3',

@@ -2,12 +2,12 @@
     {
         "id":"1",
         "text":"Recepção",
-        "status":"normal"
+        "status":"active"
     },
     {
         "id":"2",
         "text":"Triagem",
-        "status":"active"
+        "status":"normal"
     },
     {
         "id":"3",
@@ -22,7 +22,7 @@
     {
         "id":"5",
         "text":"Triagem",
-        "status":"active"
+        "status":"normal"
     },
     {
         "id":"6",
@@ -37,7 +37,7 @@
     {
         "id":"8",
         "text":"Triagem",
-        "status":"active"
+        "status":"normal"
     },
     {
         "id":"9",
@@ -52,7 +52,7 @@
     {
         "id":"11",
         "text":"Triagem",
-        "status":"active"
+        "status":"normal"
     },
     {
         "id":"12",
@@ -67,7 +67,7 @@
     {
         "id":"14",
         "text":"Triagem",
-        "status":"active"
+        "status":"normal"
     },
     {
         "id":"15",
