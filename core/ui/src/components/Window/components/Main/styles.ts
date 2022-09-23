@@ -7,4 +7,13 @@ export default styled.div`
   display: flex;
   overflow: auto;
   flex-direction: column;
+  margin-right: 3px;
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #626055;
+    width: 5px;
+  }
 `;
