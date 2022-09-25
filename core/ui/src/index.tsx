@@ -22,10 +22,10 @@ import tool from '@core/ui/src/assets/icons/tool.svg';
 import Card from '@core/ui/src/components/Card';
 import Search from '@core/ui/src/components/Search';
 import ContainerWindow from '@core/ui/src/components/Window/components/ContainerWindow';
-import background from '@core/ui/src/assets/background.jpeg';
 import HeaderChart from '@core/ui/src/components/Window/components/HeaderChart';
 import profileIcon from '@core/ui/src/assets/icons/profile.svg';
 import GlobalSyles from '@core/ui/src/theme/globalSyles';
+import Background from '@core/ui/src/components/Window/components/Background';
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -47,18 +47,7 @@ const App: FC = () => {
   return (
     <>
       <GlobalSyles />
-      <img
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          objectFit: 'cover',
-        }}
-        src={background}
-        alt="fundo"
-      />
+      <Background />
       <div
         style={{
           position: 'fixed',
