@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Container from './styles';
 import ReactDOM from 'react-dom';
-import Content from '../Content';
-import Main from '../Main';
-import Button from '../../../Button';
-import Header from '../Header';
+import Content from '@core/ui/src/components/Window/components/Content';
+import Main from '@core/ui/src/components/Window/components/Main';
+import Button from '@core/ui/src/components/Button';
+import Header from '@core/ui/src/components/Window/components/Header';
 /* global HTMLButtonElement */
 
 interface IModalProps {

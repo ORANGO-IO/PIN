@@ -1,31 +1,31 @@
 import { createRoot } from 'react-dom/client';
 import React, { FC, useEffect, useState } from 'react';
-import Header from './components/Window/components/Header';
-import AsideBar from './components/Window/components/AsideBar';
-import Main from './components/Window/components/Main';
-import Menu from './components/Window/components/Menu';
-import { MultiSelect } from './components/Form/components/MultiSelect';
-import Content from './components/Window/components/Content';
-import ListOption from './components/ListOption';
-import Modal from './components/Window/components/Modal';
-import Button from './components/Button';
-import Input from './components/Form/components/Input';
-import ItemNavBar from './components/Window/components/AsideBar/components/ItemNavBar';
+import Header from '@core/ui/src/components/Window/components/Header';
+import AsideBar from '@core/ui/src/components/Window/components/AsideBar';
+import Main from '@core/ui/src/components/Window/components/Main';
+import Menu from '@core/ui/src/components/Window/components/Menu';
+import { MultiSelect } from '@core/ui/src/components/Form/components/MultiSelect';
+import Content from '@core/ui/src/components/Window/components/Content';
+import ListOption from '@core/ui/src/components/ListOption';
+import Modal from '@core/ui/src/components/Window/components/Modal';
+import Button from '@core/ui/src/components/Button';
+import Input from '@core/ui/src/components/Form/components/Input';
+import ItemNavBar from '@core/ui/src/components/Window/components/AsideBar/components/ItemNavBar';
 
 /* Mocks */
-import options from './mocks/options.json';
-import menu from './mocks/menu.json';
-import card from './mocks/card';
-import programs from './mocks/programs.json';
+import options from '@core/ui/src/mocks/options.json';
+import menu from '@core/ui/src/mocks/menu.json';
+import card from '@core/ui/src/mocks/card';
+import programs from '@core/ui/src/mocks/programs.json';
 
-import tool from './assets/icons/tool.svg';
-import Card from './components/Card';
-import Search from './components/Search';
-import ContainerWindow from './components/Window/components/ContainerWindow';
-import background from './assets/background.jpeg';
-import HeaderChart from './components/Window/components/HeaderChart';
-import profileIcon from './assets/icons/profile.svg';
-import GlobalSyles from './theme/globalSyles';
+import tool from '@core/ui/src/assets/icons/tool.svg';
+import Card from '@core/ui/src/components/Card';
+import Search from '@core/ui/src/components/Search';
+import ContainerWindow from '@core/ui/src/components/Window/components/ContainerWindow';
+import background from '@core/ui/src/assets/background.jpeg';
+import HeaderChart from '@core/ui/src/components/Window/components/HeaderChart';
+import profileIcon from '@core/ui/src/assets/icons/profile.svg';
+import GlobalSyles from '@core/ui/src/theme/globalSyles';
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false);
