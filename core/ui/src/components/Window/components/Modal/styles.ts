@@ -23,4 +23,16 @@ export default styled.div<{ open: boolean }>`
   > div {
     z-index: 2;
   }
+
+  .content,
+  .content-main {
+    background-color: #fff;
+  }
+`;
+
+export const ContainerContentModal = styled.div`
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  border-radius: 5px;
 `;

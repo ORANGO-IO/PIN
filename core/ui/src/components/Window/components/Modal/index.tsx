@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Container from './styles';
+import Container, { ContainerContentModal } from './styles';
 import ReactDOM from 'react-dom';
 import Content from '@core/ui/src/components/Window/components/Content';
 import Main from '@core/ui/src/components/Window/components/Main';
@@ -46,14 +46,7 @@ const Modal: React.FC<IModalProps> = ({
         className="button-modal"
       ></button>
       <div>
-        <div
-          style={{
-            display: 'flex',
-            background: '#fff',
-            flexDirection: 'column',
-            borderRadius: '5px',
-          }}
-        >
+        <ContainerContentModal>
           <Header
             title={headerTitle}
             buttonLabel="Cancelar"
@@ -72,10 +65,10 @@ const Modal: React.FC<IModalProps> = ({
               }
             }}
           />
-          <Content style={{ background: '#fff' }}>
-            <Main style={{ background: '#fff' }}>{children}</Main>
+          <Content className="content">
+            <Main className="content-main">{children}</Main>
           </Content>
-        </div>
+        </ContainerContentModal>
       </div>
     </Container>,
     rootElemRef.current
