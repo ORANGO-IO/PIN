@@ -26,7 +26,7 @@ import HeaderChart from '@core/ui/src/components/Window/components/HeaderChart';
 import profileIcon from '@core/ui/src/assets/icons/profile.svg';
 import GlobalSyles from '@core/ui/src/theme/globalSyles';
 import Background from '@core/ui/src/components/Window/components/Background';
-import { ContainerFormInput, Form } from './styles';
+import { ContainerFormInput, Form, OptionListContainer } from './styles';
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -249,20 +249,7 @@ const App: FC = () => {
                 />
                 <h2>Lista de Usuários</h2>
               </div>
-              <div
-                style={{
-                  display: 'flex',
-                  background: '#fff',
-                  width: '100%',
-                  maxWidth: '447px',
-                  height: '100%',
-                  minHeight: '500px',
-                  boxSizing: 'border-box',
-                  maxHeight: '292px',
-                  border: '1px solid #C9C6C3',
-                  flexDirection: 'column',
-                }}
-              >
+              <OptionListContainer>
                 {options.map((option) => (
                   <ListOption
                     key={option.id}
@@ -290,7 +277,7 @@ const App: FC = () => {
                     }}
                   />
                 ))}
-              </div>
+              </OptionListContainer>
             </div>
           </Main>
         </Content>

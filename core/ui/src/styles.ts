@@ -9,3 +9,16 @@ export const ContainerFormInput = styled.div`
   padding: 14px 18px;
   border-bottom: 1px solid #d5cfc7;
 `;
+
+export const OptionListContainer = styled.div`
+  display: flex;
+  background: #fff;
+  width: 100%;
+  max-width: 447px;
+  height: 100%;
+  min-height: 500px;
+  box-sizing: border-box;
+  max-height: 292px;
+  border: 1px solid #c9c6c3;
+  flex-direction: column;
+`;
