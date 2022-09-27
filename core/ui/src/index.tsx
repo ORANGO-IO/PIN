@@ -26,6 +26,7 @@ import HeaderChart from '@core/ui/src/components/Window/components/HeaderChart';
 import profileIcon from '@core/ui/src/assets/icons/profile.svg';
 import GlobalSyles from '@core/ui/src/theme/globalSyles';
 import Background from '@core/ui/src/components/Window/components/Background';
+import { ContainerFormInput, Form } from './styles';
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -70,25 +71,15 @@ const App: FC = () => {
         open={openModal}
         goBack={() => setOpenModal(false)}
       >
-        <form style={{ minHeight: '359px', width: '435px' }}>
-          <div
-            style={{
-              padding: '14px 18px',
-              borderBottom: '1px solid #D5CFC7',
-            }}
-          >
+        <Form>
+          <ContainerFormInput>
             <Input
               labelOptions={{ style: { minWidth: '115px' } }}
               label="Nome Completo"
               labelPosition="left"
             />
-          </div>
-          <div
-            style={{
-              padding: '14px 18px',
-              borderBottom: '1px solid #D5CFC7',
-            }}
-          >
+          </ContainerFormInput>
+          <ContainerFormInput>
             <MultiSelect
               options={[
                 { value: 'teste', label: 'teste' },
@@ -115,18 +106,13 @@ const App: FC = () => {
               label="Permissões"
               labelPosition="Left"
             />
-          </div>
-          <div
-            style={{
-              borderBottom: '1px solid #D5CFC7',
-              padding: '14px 18px',
-            }}
-          >
+          </ContainerFormInput>
+          <ContainerFormInput>
             <Button type="button" onClick={() => setOpenModalConfirm(true)}>
               Desabilitar Usuário
             </Button>
-          </div>
-        </form>
+          </ContainerFormInput>
+        </Form>
       </Modal>
       <Modal
         headerTitle="Alerta"
