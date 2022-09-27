@@ -26,7 +26,13 @@ import HeaderChart from '@core/ui/src/components/Window/components/HeaderChart';
 import profileIcon from '@core/ui/src/assets/icons/profile.svg';
 import GlobalSyles from '@core/ui/src/theme/globalSyles';
 import Background from '@core/ui/src/components/Window/components/Background';
-import { ContainerFormInput, Form, OptionListContainer } from './styles';
+import {
+  ContainerContent,
+  ContainerFormInput,
+  ContainerParagraphe,
+  Form,
+  OptionListContainer,
+} from './styles';
 
 const App: FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -189,15 +195,7 @@ const App: FC = () => {
               <p>Comorbidades: Hipertensão Arterial Sistêmica, Diabetes</p>
               <p>Alergias:</p>
             </HeaderChart>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                flex: 1,
-                paddingTop: '60px',
-              }}
-            >
+            <ContainerContent>
               <div
                 style={{
                   maxWidth: '447px',
@@ -207,15 +205,7 @@ const App: FC = () => {
               >
                 <Input style={{ maxWidth: '106px' }} label="Label" />
               </div>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  maxWidth: '447px',
-                  rowGap: '32px',
-                  marginBottom: '12px',
-                }}
-              >
+              <ContainerParagraphe>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a
                   urna vel ex tempus blandit. Curabitur rutrum diam arcu, vel
@@ -233,7 +223,7 @@ const App: FC = () => {
                   at dui. Curabitur lobortis tincidunt nulla eget consectetur.
                   Nullam cursus iaculis lorem, at interdum nisl blandit at.
                 </p>
-              </div>
+              </ContainerParagraphe>
               <div
                 style={{
                   maxWidth: '447px',
@@ -278,7 +268,7 @@ const App: FC = () => {
                   />
                 ))}
               </OptionListContainer>
-            </div>
+            </ContainerContent>
           </Main>
         </Content>
       </ContainerWindow>
