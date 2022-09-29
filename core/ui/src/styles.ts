@@ -38,3 +38,7 @@ export const ContainerParagraphe = styled.div`
   row-gap: 32px;
   margin-bottom: 12px;
 `;
+
+export const ContainerSearch = styled.div`
+  padding: 16px;
+`;

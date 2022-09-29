@@ -32,6 +32,7 @@ import {
   ContainerParagraphe,
   Form,
   OptionListContainer,
+  ContainerSearch,
 } from './styles';
 
 const App: FC = () => {
@@ -168,15 +169,14 @@ const App: FC = () => {
 
             {typeMenu !== 'normal' && (
               <div style={{ height: '100%' }}>
-                <Search
-                  inputProps={{
-                    value: userFilter,
-                    onChange: (e) => setUserFilter(e.target.value),
-                  }}
-                  containerProps={{
-                    style: { padding: '16px', boxSizing: 'border-box' },
-                  }}
-                />
+                <ContainerSearch>
+                  <Search
+                    inputProps={{
+                      value: userFilter,
+                      onChange: (e) => setUserFilter(e.target.value),
+                    }}
+                  />
+                </ContainerSearch>
                 <div style={{ height: '100%', overflow: 'auto' }}>
                   {cardFilter.map((card) => (
                     <Card
