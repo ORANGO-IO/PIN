@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export default styled.div<{ open: boolean }>`
+export default styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 5;
   position: fixed;
   top: 0;
   left: 0;
-  display: ${({ open }) => (open ? 'flex' : 'none')};
+  display: flex;
   align-items: center;
   justify-content: center;
 

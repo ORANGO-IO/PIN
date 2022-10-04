@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Container, { ContainerContentModal } from './styles';
-import ReactDOM from 'react-dom';
 import Content from '@core/ui/src/components/Window/components/Content';
 import Main from '@core/ui/src/components/Window/components/Main';
 import Button from '@core/ui/src/components/Button';
@@ -8,35 +7,20 @@ import Header from '@core/ui/src/components/Window/components/Header';
 /* global HTMLButtonElement */
 
 interface IModalProps {
-  open: boolean;
   children: React.ReactNode;
   confirmButton?: React.MouseEventHandler<HTMLButtonElement>;
   goBack?: React.MouseEventHandler<HTMLButtonElement>;
   headerTitle: string;
 }
 
-const modalRoot = document.getElementById('modals');
-
 const Modal: React.FC<IModalProps> = ({
-  open,
   children,
   confirmButton,
   goBack,
   headerTitle,
 }) => {
-  const rootElemRef = React.useRef(document.createElement('div'));
-
-  useEffect(() => {
-    if (modalRoot) {
-      modalRoot.appendChild(rootElemRef.current);
-    }
-    return function removeElement() {
-      rootElemRef.current.remove();
-    };
-  }, []);
-
-  return ReactDOM.createPortal(
-    <Container open={open}>
+  return (
+    <Container>
       <button
         onClick={(e) => {
           if (goBack) {
@@ -70,8 +54,7 @@ const Modal: React.FC<IModalProps> = ({
           </Content>
         </ContainerContentModal>
       </div>
-    </Container>,
-    rootElemRef.current
+    </Container>
   );
 };
 

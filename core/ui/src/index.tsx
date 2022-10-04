@@ -4,11 +4,8 @@ import Header from '@core/ui/src/components/Window/components/Header';
 import AsideBar from '@core/ui/src/components/Window/components/AsideBar';
 import Main from '@core/ui/src/components/Window/components/Main';
 import Menu from '@core/ui/src/components/Window/components/Menu';
-import { MultiSelect } from '@core/ui/src/components/Form/components/MultiSelect';
 import Content from '@core/ui/src/components/Window/components/Content';
 import ListOption from '@core/ui/src/components/ListOption';
-import Modal from '@core/ui/src/components/Window/components/Modal';
-import Button from '@core/ui/src/components/Button';
 import Input from '@core/ui/src/components/Form/components/Input';
 import ItemNavBar from '@core/ui/src/components/Window/components/AsideBar/components/ItemNavBar';
 
@@ -28,16 +25,15 @@ import GlobalSyles from '@core/ui/src/theme/globalSyles';
 import Background from '@core/ui/src/components/Window/components/Background';
 import {
   ContainerContent,
-  ContainerFormInput,
   ContainerParagraphe,
-  Form,
   OptionListContainer,
   ContainerSearch,
 } from './styles';
+import ModalContextProvider, { useModalContext } from './service/modalContext';
+import ModalForm from './components/Modals/components/ModalForm';
 
 const App: FC = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const [openModalConfirm, setOpenModalConfirm] = useState(false);
+  const { addModal } = useModalContext();
 
   const [userFilter, setUserFilter] = useState('');
   const [typeMenu, setTypeMenu] = useState('normal');
@@ -73,64 +69,9 @@ const App: FC = () => {
           Menu de rotas
         </button>
       </div>
-      <Modal
-        headerTitle="Editar Usuário"
-        open={openModal}
-        goBack={() => setOpenModal(false)}
-      >
-        <Form>
-          <ContainerFormInput>
-            <Input
-              labelOptions={{ style: { minWidth: '115px' } }}
-              label="Nome Completo"
-              labelPosition="left"
-            />
-          </ContainerFormInput>
-          <ContainerFormInput>
-            <MultiSelect
-              options={[
-                { value: 'teste', label: 'teste' },
-                { value: 'teste2', label: 'teste2' },
-                { value: 'teste3', label: 'teste3' },
-                { value: 'teste5', label: 'teste5' },
-                { value: 'teste6', label: 'teste6' },
-                { value: 'teste7', label: 'teste7' },
-                { value: 'teste8', label: 'teste8' },
-                { value: 'teste9', label: 'teste9' },
-                { value: 'teste10', label: 'teste10' },
-                { value: 'teste11', label: 'teste11' },
-                { value: 'teste11', label: 'teste11' },
-
-                { value: 'teste12', label: 'teste12' },
-
-                { value: 'teste13', label: 'teste13' },
-
-                { value: 'teste14', label: 'teste14' },
-
-                { value: 'teste15', label: 'teste15' },
-              ]}
-              labelOptions={{ style: { minWidth: '115px' } }}
-              label="Permissões"
-              labelPosition="Left"
-            />
-          </ContainerFormInput>
-          <ContainerFormInput>
-            <Button type="button" onClick={() => setOpenModalConfirm(true)}>
-              Desabilitar Usuário
-            </Button>
-          </ContainerFormInput>
-        </Form>
-      </Modal>
-      <Modal
-        headerTitle="Alerta"
-        open={openModalConfirm}
-        goBack={() => setOpenModalConfirm(false)}
-      >
-        <p style={{ maxWidth: '338px', margin: '21px 56px 17px 41px' }}>
-          Tem certeza que deseja desabilitar esse usuário? Depois dessa ação ele
-          não mais terá acesso ao sistema!
-        </p>
-      </Modal>
+      {/* <Modal headerTitle="Alerta" goBack={() => setOpenModalConfirm(false)}>
+       
+      </Modal> */}
       <ContainerWindow style={{ height: '80vh' }}>
         <Header
           title="Hospital Maternidade Luís Eduardo Magalhães - Recepção"
@@ -263,7 +204,15 @@ const App: FC = () => {
                     text={option.text}
                     element={<img src={profileIcon} alt="" />}
                     buttonOptions={{
-                      onClick: () => setOpenModal(true),
+                      onClick: () => {
+                        console.log('Oi');
+                        addModal({
+                          content: <ModalForm />,
+                          confirmButtonAction: () => {},
+                          returnButtonAction: () => {},
+                          title: 'titulo',
+                        });
+                      },
                     }}
                   />
                 ))}
@@ -287,4 +236,8 @@ const App: FC = () => {
 
 const container = document.getElementById('app');
 const root = createRoot(container!);
-root.render(<App />);
+root.render(
+  <ModalContextProvider>
+    <App />
+  </ModalContextProvider>
+);
