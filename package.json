@@ -24,6 +24,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
+    "@types/uuid": "^8.3.4",
     "@types/webpack-env": "^1.17.0",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
@@ -66,7 +67,8 @@
     "react-select": "^5.4.0",
     "resize-observer-polyfill": "^1.5.1",
     "styled-components": "^5.3.5",
-    "svg-url-loader": "^7.1.1"
+    "svg-url-loader": "^7.1.1",
+    "uuid": "^9.0.0"
   },
   "config": {
     "commitizen": {
