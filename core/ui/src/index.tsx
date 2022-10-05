@@ -205,11 +205,8 @@ const App: FC = () => {
                     element={<img src={profileIcon} alt="" />}
                     buttonOptions={{
                       onClick: () => {
-                        console.log('Oi');
                         addModal({
                           content: <ModalForm />,
-                          confirmButtonAction: () => {},
-                          returnButtonAction: () => {},
                           title: 'titulo',
                         });
                       },

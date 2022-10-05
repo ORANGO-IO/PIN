@@ -52,8 +52,6 @@ const ModalForm = () => {
             onClick={() => {
               addModal({
                 title: 'Atenção',
-                confirmButtonAction: () => {},
-                returnButtonAction: () => {},
                 content: (
                   <p
                     style={{ maxWidth: '338px', margin: '21px 56px 17px 41px' }}

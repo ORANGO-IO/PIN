@@ -11,8 +11,8 @@ import { v4 as uuidv4 } from 'uuid';
 interface IAddModal {
   title: string;
   content: ReactNode;
-  returnButtonAction: () => void;
-  confirmButtonAction: () => void;
+  returnButtonAction?: () => void;
+  confirmButtonAction?: () => void;
 }
 
 interface ContextProps {
@@ -53,9 +53,9 @@ const ModalContextProvider: React.FC<ModalContextProvider> = ({ children }) => {
   }
 
   function addModal({
-    confirmButtonAction,
+    confirmButtonAction = () => {},
     content,
-    returnButtonAction,
+    returnButtonAction = () => {},
     title,
   }: IAddModal) {
     const id = uuidv4();
