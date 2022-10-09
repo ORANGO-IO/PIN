@@ -2,12 +2,14 @@
     {
         "id":"1",
         "text":"Recepção",
-        "status":"active"
+        "status":"active",
+        "link":"/"
     },
     {
         "id":"2",
         "text":"Triagem",
-        "status":"normal"
+        "status":"normal",
+        "link":"atendimento"
     },
     {
         "id":"3",

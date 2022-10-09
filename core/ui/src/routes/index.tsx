@@ -1,14 +1,27 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
 import Main from '@core/ui/src/pages/Main';
+import Window from '../templates/Window';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main />,
+    element: <Window />,
+    children: [
+      {
+        path: '/',
+        element: <Main />,
+      },
+    ],
   },
   {
     path: '/atendimento',
-    element: <div></div>,
+    element: <Window />,
+    children: [
+      {
+        path: '/atendimento',
+        element: <div></div>,
+      },
+    ],
   },
 ]);
 

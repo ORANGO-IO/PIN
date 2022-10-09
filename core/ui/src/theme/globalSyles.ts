@@ -33,4 +33,8 @@ export default createGlobalStyle`
         color: #4C4F4F;
 
     }
+
+    a{
+        text-decoration:none;
+    }
 `;

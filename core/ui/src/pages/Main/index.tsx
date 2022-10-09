@@ -12,12 +12,11 @@ import {
   OptionListContainer,
 } from './styles';
 import { useModalContext } from '@core/ui/src/services/modalContext';
-import Container from '@core/ui/src/components/Window/components/Main';
 const Main = () => {
   const { addModal } = useModalContext();
 
   return (
-    <Container>
+    <>
       <HeaderChart fixed>
         <p>Filipe Rocha Lopes, Masculino. 56 anos</p>
         <p>Comorbidades: Hipertensão Arterial Sistêmica, Diabetes</p>
@@ -102,7 +101,7 @@ const Main = () => {
           ))}
         </OptionListContainer>
       </ContainerContent>
-    </Container>
+    </>
   );
 };
 
