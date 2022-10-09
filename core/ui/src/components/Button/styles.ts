@@ -12,8 +12,6 @@ export default styled.button<{
   font-family: 'Ubuntu', sans-serif;
   background: linear-gradient(180deg, #ffffff 0%, #f3f1f1 100%);
   border: 1px solid #929292;
-  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85),
-    inset 0px 1px 0px 1px #ffffff;
   border-radius: 5px;
   cursor: pointer;
   padding: 0 8px;
@@ -22,8 +20,24 @@ export default styled.button<{
     switch (customType) {
       case 'green-confirm':
         return css`
-          background: linear-gradient(180deg, #00d56c 0%, #04bb61 100%);
+          background: linear-gradient(180deg, #40c673 0%, #39a563 100%);
           border: 1px solid #363632;
+          box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.85),
+            inset 0px 1px 0px 1px #6ede89 inset;
+
+          :hover {
+            background: linear-gradient(180deg, #3fc371 0%, #3fc271 100%);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25),
+              0px 1px 0px rgba(255, 255, 255, 0.85),
+              inset 0px 1px 0px 1px #6ede89 inset;
+          }
+          :active {
+            background: linear-gradient(180deg, #39a663 0%, #3fc371 100%);
+            border: 1px solid #db815d;
+            box-shadow: 0px 0px 2px #db815d,
+              0px 1px 0px rgba(255, 255, 255, 0.85),
+              inset 0px 1px 0px 1px #6ede89 inset;
+          }
         `;
       case 'orange-warning':
         return css`
