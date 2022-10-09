@@ -42,8 +42,8 @@ const App: FC = () => {
   useEffect(() => {
     const newCardFilter = card.filter(
       (card) =>
-        card.label.includes(userFilter) ||
-        card.contentLabel?.includes(userFilter)
+        card.keywords.includes(userFilter) ||
+        card.labelTitle?.includes(userFilter)
     );
     setCardFilter(newCardFilter);
   }, [userFilter]);
@@ -69,9 +69,6 @@ const App: FC = () => {
           Menu de rotas
         </button>
       </div>
-      {/* <Modal headerTitle="Alerta" goBack={() => setOpenModalConfirm(false)}>
-       
-      </Modal> */}
       <ContainerWindow style={{ height: '80vh' }}>
         <Header
           title="Hospital Maternidade Luís Eduardo Magalhães - Recepção"

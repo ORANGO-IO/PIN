@@ -10,8 +10,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -27,8 +27,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -44,8 +44,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -61,8 +61,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -78,8 +78,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -95,8 +95,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -112,8 +112,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -129,8 +129,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -146,8 +146,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -163,8 +163,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -180,8 +180,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -197,8 +197,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -214,8 +214,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
@@ -231,8 +231,8 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    label: '',
-    contentLabel: '',
+    labelTitle: '',
+    keywords: '',
     content: (
       <div>
         <p>DN 31/04/1964, FEM</p>
