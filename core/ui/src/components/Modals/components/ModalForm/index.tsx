@@ -1,4 +1,4 @@
-import { useModalContext } from '@core/ui/src/service/modalContext';
+import { useModalContext } from '@core/ui/src/services/modalContext';
 import { ContainerFormInput, Form } from './styles';
 import Input from '@core/ui/src/components/Form/components/Input';
 import { MultiSelect } from '@core/ui/src/components/Form/components/MultiSelect';

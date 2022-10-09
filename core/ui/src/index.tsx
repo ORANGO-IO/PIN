@@ -29,7 +29,7 @@ import {
   OptionListContainer,
   ContainerSearch,
 } from './styles';
-import ModalContextProvider, { useModalContext } from './service/modalContext';
+import ModalContextProvider, { useModalContext } from './services/modalContext';
 import ModalForm from './components/Modals/components/ModalForm';
 
 const App: FC = () => {
