@@ -10,7 +10,7 @@ export default [
         <Badge>INTERNADO</Badge>
       </>
     ),
-    labelTitle: '',
+    labelTitle: 'Antônio Cardoso de Oliveira Martins',
     keywords: '',
     content: (
       <div>
